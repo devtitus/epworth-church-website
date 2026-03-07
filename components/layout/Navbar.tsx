@@ -3,14 +3,27 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Organizations', href: '/sermons' },
   { name: 'Events', href: '/events' },
   { name: 'Contact', href: '/contact' },
+]
+
+const organizationLinks = [
+  { name: 'Worship Team', href: '/sermons' },
+  { name: 'Youth Group', href: '/sermons' },
+  { name: 'Children Ministry', href: '/sermons' },
+  { name: 'Prayer Chain', href: '/sermons' },
+  { name: 'Food Pantry', href: '/sermons' },
 ]
 
 const Navbar = () => {
@@ -50,6 +63,21 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center px-4 py-2 rounded-full text-sm font-normal text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors focus:outline-none">
+                  Organizations
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  {organizationLinks.map((org) => (
+                    <DropdownMenuItem key={org.name}>
+                      <Link href={org.href} className="w-full">
+                        {org.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
           <div className="md:hidden">
@@ -80,6 +108,21 @@ const Navbar = () => {
                 }`}
               >
                 {link.name}
+              </Link>
+            ))}
+            <div className="pt-2 pb-1">
+              <span className="block px-3 py-2 text-sm font-semibold text-gray-900">
+                Organizations
+              </span>
+            </div>
+            {organizationLinks.map((org) => (
+              <Link
+                key={org.name}
+                href={org.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-6 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              >
+                {org.name}
               </Link>
             ))}
           </div>
