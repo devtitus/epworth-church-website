@@ -4,12 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+import { Dropdown } from '@/components/ui/Dropdown'
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -18,12 +13,13 @@ const navLinks = [
   { name: 'Contact', href: '/contact' },
 ]
 
+// Organization items shown in dropdown
 const organizationLinks = [
-  { name: 'Worship Team', href: '/sermons' },
-  { name: 'Youth Group', href: '/sermons' },
-  { name: 'Children Ministry', href: '/sermons' },
-  { name: 'Prayer Chain', href: '/sermons' },
-  { name: 'Food Pantry', href: '/sermons' },
+  { name: 'Sunday School', href: '/sermons' },
+  { name: 'EMTeens', href: '/sermons' },
+  { name: 'MYF', href: '/sermons' },
+  { name: 'WSCS', href: '/sermons' },
+  { name: 'Methodist Men', href: '/sermons' },
 ]
 
 const Navbar = () => {
@@ -33,7 +29,7 @@ const Navbar = () => {
   const isActive = (href: string) => pathname === href
 
   return (
-    <nav className="bg-white shadow-md border-b border-gray-200">
+    <nav className="sticky top-0 z-50 bg-white shadow-xs border-b border-gray-200 flex-shrink-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -50,34 +46,50 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                    isActive(link.href)
-                      ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center px-4 py-2 rounded-full text-sm font-normal text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors focus:outline-none">
-                  Organizations
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
-                  {organizationLinks.map((org) => (
-                    <DropdownMenuItem key={org.name}>
-                      <Link href={org.href} className="w-full">
-                        {org.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <Link
+                href="/"
+                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
+                  isActive('/')
+                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
+                  isActive('/about')
+                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+              >
+                About
+              </Link>
+              <Dropdown
+                trigger="Organizations"
+                items={organizationLinks}
+              />
+              <Link
+                href="/events"
+                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
+                  isActive('/events')
+                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+              >
+                Events
+              </Link>
+              <Link
+                href="/contact"
+                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
+                  isActive('/contact')
+                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+              >
+                Contact
+              </Link>
             </div>
           </div>
           <div className="md:hidden">
@@ -96,20 +108,28 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isActive(link.href)
-                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                isActive('/')
+                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                isActive('/about')
+                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
+              About
+            </Link>
             <div className="pt-2 pb-1">
               <span className="block px-3 py-2 text-sm font-semibold text-gray-900">
                 Organizations
@@ -125,6 +145,28 @@ const Navbar = () => {
                 {org.name}
               </Link>
             ))}
+            <Link
+              href="/events"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                isActive('/events')
+                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
+              Events
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                isActive('/contact')
+                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
+              Contact
+            </Link>
           </div>
         </div>
       )}
