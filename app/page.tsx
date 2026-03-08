@@ -1,9 +1,10 @@
-import { Hero } from "@/app/sections/home/index"
+import { Hero, Greetings } from "@/app/sections/home/index"
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
+      <Greetings />
     </div>
   );
 }
