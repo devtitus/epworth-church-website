@@ -9,7 +9,7 @@ import { Dropdown } from '@/components/ui/Dropdown'
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Events', href: '/events' },
+  { name: 'From the Church', href: '/events' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -20,6 +20,12 @@ const organizationLinks = [
   { name: 'MYF', href: '/sermons' },
   { name: 'WSCS', href: '/sermons' },
   { name: 'Methodist Men', href: '/sermons' },
+]
+
+// From the Church items shown in dropdown
+const fromChurchLinks = [
+  { name: 'Blogs', href: '/events' },
+  { name: 'Announcements', href: '/events' },
 ]
 
 const Navbar = () => {
@@ -70,16 +76,10 @@ const Navbar = () => {
                 trigger="Organizations"
                 items={organizationLinks}
               />
-              <Link
-                href="/events"
-                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive('/events')
-                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                }`}
-              >
-                Events
-              </Link>
+              <Dropdown
+                trigger="From the Church"
+                items={fromChurchLinks}
+              />
               <Link
                 href="/contact"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
@@ -145,17 +145,21 @@ const Navbar = () => {
                 {org.name}
               </Link>
             ))}
-            <Link
-              href="/events"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive('/events')
-                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-              }`}
-            >
-              Events
-            </Link>
+            <div className="pt-2 pb-1">
+              <span className="block px-3 py-2 text-sm font-semibold text-gray-900">
+                From the Church
+              </span>
+            </div>
+            {fromChurchLinks.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-6 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              >
+                {item.name}
+              </Link>
+            ))}
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
