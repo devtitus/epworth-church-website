@@ -11,7 +11,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[var(--color-secondary-background)] text-[var(--color-primary-text)] py-8">
+    <footer className="bg-[var(--color-secondary-background)] text-[var(--color-primary-text)] py-8 border-t border-gray-200 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
