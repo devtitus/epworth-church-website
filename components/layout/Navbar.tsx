@@ -1,17 +1,10 @@
 "use client";
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Dropdown } from '@/components/ui/Dropdown'
-
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'From the Church', href: '/events' },
-  { name: 'Contact', href: '/contact' },
-]
 
 // Organization items shown in dropdown
 const organizationLinks = [
