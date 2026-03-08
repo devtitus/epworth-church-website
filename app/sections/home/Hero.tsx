@@ -1,18 +1,22 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Clock, MapPin, Heart, Users, BookOpen, Sparkles } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen min-h-[700px] overflow-hidden">
+    <section 
+      className="relative w-full h-screen min-h-[700px] overflow-hidden"
+      aria-label="Welcome to Epworth Methodist Tamil Church"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/home/1.jpg"
-          alt="Epworth Methodist Tamil Church"
+          alt="Epworth Methodist Tamil Church - Our church building and congregation"
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         {/* Sophisticated overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
@@ -20,7 +24,7 @@ const Hero = () => {
       </div>
 
       {/* Ambient Light Effects */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[60%] bg-[var(--color-highlight)]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[35%] h-[50%] bg-red-900/15 rounded-full blur-[100px]" />
         <div className="absolute top-[30%] right-[20%] w-24 h-24 border border-white/10 rounded-full" />
@@ -32,10 +36,13 @@ const Hero = () => {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Main Content */}
-            <div className="text-center lg:text-left">
+            <header className="text-center lg:text-left">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                <Sparkles className="w-4 h-4 text-[var(--color-highlight)]" />
+              <div 
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
+                role="status"
+              >
+                <span className="w-2 h-2 rounded-full bg-[var(--color-highlight)] animate-pulse" aria-hidden="true" />
                 <span className="text-white/90 text-sm font-medium">
                   Est. 1874 • A Heritage of Faith
                 </span>
@@ -58,98 +65,106 @@ const Hero = () => {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button variant="secondary" className="px-8 py-4 text-base font-semibold flex items-center justify-center gap-2">
-                  Learn More About Us
-                </Button>
-              </div>
-            </div>
+              <nav aria-label="Hero actions">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button variant="secondary" className="px-8 py-4 text-base font-semibold flex items-center justify-center gap-2">
+                    Learn More About Us
+                  </Button>
+                </div>
+              </nav>
+            </header>
 
             {/* Right Column - Stats Card */}
-            <div className="hidden lg:block">
-              <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8">
+            <aside className="hidden lg:block" aria-label="Church statistics and service information">
+              <article className="relative bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8">
                 {/* Welcome Text */}
                 <div className="text-center mb-8">
-                  <h3 className="text-white text-2xl font-bold mb-2">Welcome to Our</h3>
+                  <h2 className="text-white text-2xl font-bold mb-2">Welcome to Our</h2>
                   <p className="text-white/60">Church Family</p>
                 </div>
 
                 {/* Simple Stats Row */}
-                <div className="flex justify-center gap-8 mb-8">
+                <dl className="flex justify-center gap-8 mb-8">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-white mb-1">150+</div>
-                    <div className="text-sm text-white/50">Years</div>
+                    <dt className="sr-only">Years of heritage</dt>
+                    <dd className="text-4xl font-bold text-white mb-1">150+</dd>
+                    <dd className="text-sm text-white/50">Years</dd>
                   </div>
-                  <div className="w-px h-12 bg-white/20" />
+                  <div className="w-px h-12 bg-white/20" aria-hidden="true" />
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-white mb-1">500+</div>
-                    <div className="text-sm text-white/50">Members</div>
+                    <dt className="sr-only">Total members</dt>
+                    <dd className="text-4xl font-bold text-white mb-1">500+</dd>
+                    <dd className="text-sm text-white/50">Members</dd>
                   </div>
-                  <div className="w-px h-12 bg-white/20" />
+                  <div className="w-px h-12 bg-white/20" aria-hidden="true" />
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-white mb-1">5+</div>
-                    <div className="text-sm text-white/50">Ministries</div>
+                    <dt className="sr-only">Active ministries</dt>
+                    <dd className="text-4xl font-bold text-white mb-1">5+</dd>
+                    <dd className="text-sm text-white/50">Ministries</dd>
                   </div>
-                </div>
+                </dl>
 
                 {/* Service Info */}
-                <div className="flex items-center justify-center gap-8 p-4 rounded-2xl bg-white/5">
+                <address className="flex items-center justify-center gap-8 p-4 rounded-2xl bg-white/5 not-italic">
                   <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-[var(--color-highlight)]" />
-                    <span className="text-white font-medium">8:30 AM</span>
+                    <Clock className="w-5 h-5 text-[var(--color-highlight)]" aria-hidden="true" />
+                    <time className="text-white font-medium" dateTime="2024-01-07T08:30">8:30 AM</time>
                   </div>
-                  <div className="w-px h-6 bg-white/20" />
+                  <div className="w-px h-6 bg-white/20" aria-hidden="true" />
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-[var(--color-highlight)]" />
+                    <MapPin className="w-5 h-5 text-[var(--color-highlight)]" aria-hidden="true" />
                     <span className="text-white font-medium">Navi Mumbai, Maharashtra</span>
                   </div>
-                </div>
-              </div>
-            </div>
+                </address>
+              </article>
+            </aside>
           </div>
 
           {/* Mobile Stats (visible only on small screens) */}
-          <div className="lg:hidden mt-10">
-            <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
+          <div className="lg:hidden mt-10" aria-label="Church statistics and service information">
+            <article className="relative bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
               <div className="text-center mb-6">
-                <h3 className="text-white text-xl font-bold mb-1">Welcome to Our Church Family</h3>
+                <h2 className="text-white text-xl font-bold mb-1">Welcome to Our Church Family</h2>
               </div>
               
               {/* Simple Stats Row */}
-              <div className="flex justify-center gap-6 mb-6">
+              <dl className="flex justify-center gap-6 mb-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">150+</div>
-                  <div className="text-xs text-white/50">Years</div>
+                  <dt className="sr-only">Years of heritage</dt>
+                  <dd className="text-3xl font-bold text-white mb-1">150+</dd>
+                  <dd className="text-xs text-white/50">Years</dd>
                 </div>
-                <div className="w-px h-10 bg-white/20" />
+                <div className="w-px h-10 bg-white/20" aria-hidden="true" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">500+</div>
-                  <div className="text-xs text-white/50">Members</div>
+                  <dt className="sr-only">Total members</dt>
+                  <dd className="text-3xl font-bold text-white mb-1">500+</dd>
+                  <dd className="text-xs text-white/50">Members</dd>
                 </div>
-                <div className="w-px h-10 bg-white/20" />
+                <div className="w-px h-10 bg-white/20" aria-hidden="true" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">5+</div>
-                  <div className="text-xs text-white/50">Ministries</div>
+                  <dt className="sr-only">Active ministries</dt>
+                  <dd className="text-3xl font-bold text-white mb-1">5+</dd>
+                  <dd className="text-xs text-white/50">Ministries</dd>
                 </div>
-              </div>
+              </dl>
               
-              <div className="flex items-center justify-center gap-6 text-sm">
+              <address className="flex items-center justify-center gap-6 text-sm not-italic">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[var(--color-highlight)]" />
-                  <span className="text-white">9:00 AM</span>
+                  <Clock className="w-4 h-4 text-[var(--color-highlight)]" aria-hidden="true" />
+                  <time className="text-white" dateTime="2024-01-07T09:00">9:00 AM</time>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[var(--color-highlight)]" />
+                  <MapPin className="w-4 h-4 text-[var(--color-highlight)]" aria-hidden="true" />
                   <span className="text-white">Chennai</span>
                 </div>
-              </div>
-            </div>
+              </address>
+            </article>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce" aria-hidden="true">
         <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
           <div className="w-1 h-2 bg-white/50 rounded-full animate-pulse" />
         </div>
