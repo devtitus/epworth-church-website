@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Greetings = () => {
   return (
     <section
-      className="relative w-full py-20 lg:py-24 bg-[var(--color-secondary-background)]"
+      className="relative w-full py-20 lg:py-24 bg-[var(--color-background)]"
       aria-labelledby="greetings-heading"
     >
       {/* Background accents */}
