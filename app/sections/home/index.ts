@@ -1,2 +1,3 @@
-export { default as Hero } from './Hero';
-export { default as Greetings } from './Greetings'
+export { default as Hero } from './hero';
+export { default as Greetings } from './greetings';
+export { default as Find } from './find-us'
