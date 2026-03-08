@@ -42,7 +42,7 @@ const Navbar = () => {
             <div className="shrink-0 flex items-center">
               <Link href="/">
                 <Image
-                  src="/logo/Epworth_logo.webp"
+                  src="/logo/Epworth_logo.svg"
                   alt="Epworth Logo"
                   width={190}
                   height={48}
