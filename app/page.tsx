@@ -7,8 +7,8 @@ export default function Home() {
       <Hero />
       <Greetings />
       <About />
-      <Find />
       <Ministry />
+      <Find />
       <Contact />
     </div>
   );
