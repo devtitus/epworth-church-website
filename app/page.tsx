@@ -1,4 +1,5 @@
-import { Hero, Greetings, Find, About, Ministry } from "@/app/sections/home/index"
+import { Hero, Greetings, Find, About, Ministry } from "@/app/sections/home/index";
+import { Contact } from "@/components/layout/index";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <About />
       <Find />
       <Ministry />
+      <Contact />
     </div>
   );
 }
