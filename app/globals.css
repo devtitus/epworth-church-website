@@ -7,6 +7,8 @@
   --color-primary-text: #000000;
   --color-secondary-text: #363636;
   --color-highlight: #93140D;
+  --glass-card-bg: #ffffff;
+  --border-highlight: rgba(147, 20, 13, 0.1)
 }
 
 
@@ -18,6 +20,7 @@
   --color-highlight: var(--color-highlight);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --glass-card-bg: var(--glass-card-bg);
 }
 
 

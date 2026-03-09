@@ -93,12 +93,13 @@ const Greetings = () => {
             <div className="relative">
               {/* Glass frame effect */}
               <div
-                className="absolute -inset-4 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30"
+                className="absolute -inset-4 backdrop-blur-md rounded-3xl border border-[var(--border-highlight)]"
+                style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 50%, rgba(255, 255, 255, 0.2) 100%)' }}
                 aria-hidden="true"
               />
 
               {/* Image Container */}
-              <div className="relative aspect-[5/6] rounded-2xl overflow-hidden">
+              <div className="relative aspect-[1/1] rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
                 <Image
                   src="/home/pastors-image.png"
                   alt="Rev. Alvin Raj - Senior Pastor"
