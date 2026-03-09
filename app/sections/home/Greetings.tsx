@@ -1,6 +1,4 @@
-"use client";
-
-import Image from 'next/image';
+import Image from "next/image";
 
 const Greetings = () => {
   return (
@@ -9,8 +7,14 @@ const Greetings = () => {
       aria-labelledby="greetings-heading"
     >
       {/* Background accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-highlight)]/5 rounded-full blur-[100px]" aria-hidden="true" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-red-900/5 rounded-full blur-[80px]" aria-hidden="true" />
+      <div
+        className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-highlight)]/5 rounded-full blur-[100px]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 left-0 w-80 h-80 bg-red-900/5 rounded-full blur-[80px]"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -27,7 +31,7 @@ const Greetings = () => {
                 id="greetings-heading"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-primary-text)] leading-tight mb-6"
               >
-                A Message of{' '}
+                A Message of{" "}
                 <span className="text-[var(--color-highlight)]">Welcome</span>
               </h2>
             </header>
@@ -38,13 +42,23 @@ const Greetings = () => {
                 Dear Brothers and Sisters in Christ,
               </p>
               <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
-                I am delighted to welcome you to our church website! Our church is a vibrant community of God-fearing believers, passionate about growing in our relationship with the Lord and sharing His love with others. We have various organizations and ministries catering to different age groups, from children to seniors, designed to nurture and equip individuals to fulfill their God-given potential.
+                I am delighted to welcome you to our church website! Our church
+                is a vibrant community of God-fearing believers, passionate
+                about growing in our relationship with the Lord and sharing His
+                love with others. We have various organizations and ministries
+                catering to different age groups, from children to seniors,
+                designed to nurture and equip individuals to fulfill their
+                God-given potential.
               </p>
               <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
-                Whether you are seeking a spiritual home, looking for fellowship, or simply exploring the Christian faith, we invite you to join us on this journey of faith!
+                Whether you are seeking a spiritual home, looking for
+                fellowship, or simply exploring the Christian faith, we invite
+                you to join us on this journey of faith!
               </p>
               <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-2">
-                May you experience the love, joy, and peace of our Lord Jesus Christ as you navigate our website and get to know our church family.
+                May you experience the love, joy, and peace of our Lord Jesus
+                Christ as you navigate our website and get to know our church
+                family.
               </p>
               <p className="text-base text-[var(--color-secondary-text)] leading-relaxed">
                 With blessings and warm regards,
@@ -78,7 +92,10 @@ const Greetings = () => {
           <div className="order-1 lg:order-2">
             <div className="relative">
               {/* Glass frame effect */}
-              <div className="absolute -inset-4 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30" aria-hidden="true" />
+              <div
+                className="absolute -inset-4 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30"
+                aria-hidden="true"
+              />
 
               {/* Image Container */}
               <div className="relative aspect-[5/6] rounded-2xl overflow-hidden">
