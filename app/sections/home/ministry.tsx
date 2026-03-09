@@ -66,7 +66,7 @@ const Ministry = () => {
             id="ministry-heading"
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-2"
           >
-            Serve <span className="text-[var(--color-highlight)]">With Us</span>
+            Serve <span className="text-[var(--accent-2)]">With Us</span>
           </h2>
 
           <p className="text-[var(--color-secondary-text)] text-lg max-w-2xl mx-auto">

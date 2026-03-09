@@ -20,22 +20,22 @@ const ContactSection = ({
 }: ContactSectionProps) => {
   return (
     <section
-      className="relative w-full py-16 lg:py-24 bg-[var(--background)]"
+      className="relative w-full py-16 lg:py-24 bg-[var(--background-2)]"
       aria-labelledby="contact-cta-heading"
     >
       {/* Background subtle gradient */}
       <div 
         className="absolute inset-0 z-0"
         style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(147, 20, 13, 0.03) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(239, 200, 139, 0.4) 0%, transparent 70%)',
         }}
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main CTA Card with Glassmorphism - using find-us style */}
+        {/* Main CTA Card with Glassmorphism - Accent 3 gradient: dark to light */}
         <div 
           className="rounded-3xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs overflow-hidden"
-          style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}
+          style={{ background: 'linear-gradient(0deg, var(--gradient-shade-2) 0%, var(--gradient-shade-1) 100%)' }}
         >
           {/* Inner content area */}
           <div className="px-8 py-8 lg:px-16 lg:py-12">
@@ -44,7 +44,7 @@ const ContactSection = ({
             <div className="mb-6">
               <span 
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium"
-                style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%)' }}
+                style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.7) 0%, rgba(211, 213, 215, 0.3) 100%)' }}
               >
                 <Heart className="w-4 h-4 text-[var(--color-highlight)] fill-current" />
                 <span className="text-[var(--color-highlight)]">{tagline}</span>
@@ -54,11 +54,11 @@ const ContactSection = ({
             {/* Title */}
             <h2
               id="contact-cta-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--foreground)] leading-tight mb-4"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--background)] leading-tight mb-4"
             >
               {title.split(' ').map((word, i) => 
                 word.toLowerCase().includes('you') || word.toLowerCase().includes('from') ? (
-                  <span key={i} className="text-[var(--color-highlight)]"> {word}</span>
+                  <span key={i} className="text-[var(--accent-5)]"> {word}</span>
                 ) : (
                   <span key={i}> {word}</span>
                 )
@@ -66,7 +66,7 @@ const ContactSection = ({
             </h2>
 
             {/* Description */}
-            <p className="text-[var(--color-secondary-text)] text-lg max-w-2xl mb-10">
+            <p className="text-white/60 text-lg max-w-2xl mb-10">
               {description}
             </p>
 
@@ -76,14 +76,14 @@ const ContactSection = ({
               <div className="flex flex-wrap gap-4">
                 <div 
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm"
-                  style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%)' }}
+                  style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.5) 0%, rgba(211, 213, 215, 0.2) 100%)' }}
                 >
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
+                  <div className="w-2 h-2 rounded-full bg-green-600" />
                   <span className="text-[var(--color-secondary-text)]">We respond within 24 hours</span>
                 </div>
                 <div 
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm"
-                  style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%)' }}
+                  style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.5) 0%, rgba(211, 213, 215, 0.2) 100%)' }}
                 >
                   <div className="w-2 h-2 rounded-full bg-[var(--color-highlight)]" />
                   <span className="text-[var(--color-secondary-text)]">All inquiries welcome</span>
@@ -94,7 +94,7 @@ const ContactSection = ({
               <Link
                 href={buttonHref}
                 className="group relative inline-flex items-center gap-3 px-10 py-4 border border-[var(--border-highlight)] backdrop-blur-lg text-[var(--foreground)] font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-[var(--color-highlight)] hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-[var(--color-highlight)]/25"
-                style={{ background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)' }}
+                style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.8) 0%, rgba(211, 213, 215, 0.3) 100%)' }}
               >
                 <span>{buttonText}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

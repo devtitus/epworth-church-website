@@ -28,7 +28,7 @@ const Navbar = () => {
   const isActive = (href: string) => pathname === href
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--color-background)] shadow-xs border-b border-gray-200 flex-shrink-0">
+    <nav className="sticky top-0 z-50 bg-[var(--background)] shadow-xs border-b border-[var(--border)] flex-shrink-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -49,8 +49,8 @@ const Navbar = () => {
                 href="/"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
                   isActive('/')
-                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
+                    : 'text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)]'
                 }`}
               >
                 Home
@@ -59,8 +59,8 @@ const Navbar = () => {
                 href="/about"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
                   isActive('/about')
-                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
+                    : 'text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)]'
                 }`}
               >
                 About
@@ -77,8 +77,8 @@ const Navbar = () => {
                 href="/contact"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
                   isActive('/contact')
-                    ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
+                    : 'text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)]'
                 }`}
               >
                 Contact
@@ -88,7 +88,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-[var(--foreground)] hover:text-[var(--foreground)] hover:bg-[var(--accent-3)] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--border)]"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -99,15 +99,15 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
+        <div className="md:hidden border-t border-[var(--border)]">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-[var(--accent-3)]">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 isActive('/')
-                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
+                  : 'text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]'
               }`}
             >
               Home
@@ -117,14 +117,14 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 isActive('/about')
-                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
+                  : 'text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]'
               }`}
             >
               About
             </Link>
             <div className="pt-2 pb-1">
-              <span className="block px-3 py-2 text-sm font-semibold text-gray-900">
+              <span className="block px-3 py-2 text-sm font-semibold text-[var(--foreground)]">
                 Organizations
               </span>
             </div>
@@ -133,13 +133,13 @@ const Navbar = () => {
                 key={org.name}
                 href={org.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]"
               >
                 {org.name}
               </Link>
             ))}
             <div className="pt-2 pb-1">
-              <span className="block px-3 py-2 text-sm font-semibold text-gray-900">
+              <span className="block px-3 py-2 text-sm font-semibold text-[var(--foreground)]">
                 From the Church
               </span>
             </div>
@@ -148,7 +148,7 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]"
               >
                 {item.name}
               </Link>
@@ -158,8 +158,8 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 isActive('/contact')
-                  ? 'text-[var(--color-highlight)] bg-[var(--color-highlight)]/10'
-                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
+                  : 'text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]'
               }`}
             >
               Contact

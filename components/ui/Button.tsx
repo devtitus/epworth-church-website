@@ -8,11 +8,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ children, className = "", variant = "primary", ...props }: ButtonProps) {
-  const baseStyles = "group relative overflow-hidden h-12 px-8 rounded-full cursor-pointer transition-all duration-500 font-medium";
+  const baseStyles = "group relative overflow-hidden h-12 px-8 rounded-xl cursor-pointer transition-all duration-300 font-medium";
   
   const variants = {
-    primary: "bg-[var(--color-secondary-background)] text-[var(--color-highlight)] border-1 border-[var(--color-highlight)] hover:bg-[var(--color-highlight)] hover:text-white",
-    secondary: "bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20"
+    primary: "bg-[var(--color-highlight)] text-white border border-[var(--color-highlight)] hover:bg-transparent hover:text-[var(--color-highlight)]",
+    secondary: "bg-[var(--accent-3)]/30 backdrop-blur-sm text-[var(--foreground)] border border-[var(--border-highlight)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]"
   };
 
   return (

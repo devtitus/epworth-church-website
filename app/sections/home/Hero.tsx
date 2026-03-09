@@ -23,14 +23,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
       </div>
 
-      {/* Ambient Light Effects */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[60%] bg-[var(--color-highlight)]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[35%] h-[50%] bg-red-900/15 rounded-full blur-[100px]" />
-        <div className="absolute top-[30%] right-[20%] w-24 h-24 border border-white/10 rounded-full" />
-        <div className="absolute top-[60%] left-[10%] w-16 h-16 border border-white/5 rounded-full" />
-      </div>
-
       {/* Main Content */}
       <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +31,8 @@ const Hero = () => {
             <header className="text-center lg:text-left">
               {/* Badge */}
               <div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border-highlight)] mb-6"
+                style={{ background: 'rgba(211, 213, 215, 0.2)', backdropFilter: 'blur(8px)' }}
                 role="status"
               >
                 <span className="w-2 h-2 rounded-full bg-[var(--color-highlight)] animate-pulse" aria-hidden="true" />
@@ -53,7 +46,7 @@ const Hero = () => {
                 Epworth Methodist{' '}
                 <span className="block mt-2">
                   <span className="inline-block">
-                    Tamil Church
+                    <span className='text-[var(--accent-4)]'>Tamil </span>Church
                   </span>
                 </span>
               </h1>
@@ -76,7 +69,10 @@ const Hero = () => {
 
             {/* Right Column - Stats Card */}
             <aside className="hidden lg:block" aria-label="Church statistics and service information">
-              <article className="relative bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8">
+              <article 
+                className="relative rounded-3xl border border-[var(--border-highlight)] p-8"
+                style={{ background: 'rgba(211, 213, 215, 0.15)', backdropFilter: 'blur(20px)' }}
+              >
                 {/* Welcome Text */}
                 <div className="text-center mb-8">
                   <h2 className="text-white text-2xl font-bold mb-2">Welcome to Our</h2>
@@ -105,7 +101,7 @@ const Hero = () => {
                 </dl>
 
                 {/* Service Info */}
-                <address className="flex items-center justify-center gap-8 p-4 rounded-2xl bg-white/5 not-italic">
+                <address className="flex items-center justify-center gap-8 p-4 rounded-2xl not-italic" style={{ background: 'rgba(211, 213, 215, 0.1)' }}>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[var(--color-highlight)]" aria-hidden="true" />
                     <time className="text-white font-medium" dateTime="2024-01-07T08:30">8:30 AM</time>
@@ -122,7 +118,10 @@ const Hero = () => {
 
           {/* Mobile Stats (visible only on small screens) */}
           <div className="lg:hidden mt-10" aria-label="Church statistics and service information">
-            <article className="relative bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
+            <article 
+              className="relative rounded-2xl border border-[var(--border-highlight)] p-6"
+              style={{ background: 'rgba(211, 213, 215, 0.15)', backdropFilter: 'blur(20px)' }}
+            >
               <div className="text-center mb-6">
                 <h2 className="text-white text-xl font-bold mb-1">Welcome to Our Church Family</h2>
               </div>

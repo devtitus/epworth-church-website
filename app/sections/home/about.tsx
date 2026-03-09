@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 const About = () => {
   return (
     <section
-      className="relative w-full py-20 lg:py-24 bg-[var(--color-background)]"
+      className="relative w-full py-20 lg:py-24 bg-[var(--background)]"
       aria-labelledby="about-heading"
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +13,7 @@ const About = () => {
 
           {/* Left Column - Church Image with Glass Effect Card */}
           <div className="order-1 lg:order-1">
-            <div className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-lg" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 50%, rgba(255, 255, 255, 0.2) 100%)' }}>
+            <div className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-lg" style={{ background: 'var(--card-shade)' }}>
 
               {/* Image Container */}
               <div className="relative aspect-[1/1] rounded-2xl overflow-hidden border border-[var(--border-highlight)]">
@@ -29,7 +29,10 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                 {/* Stats overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 bg-white/10 backdrop-blur-md border-t border-white/20">
+                <div 
+                  className="absolute bottom-0 left-0 right-0 p-5 border-t"
+                  style={{ background: 'rgba(211, 213, 215, 0.3)', backdropFilter: 'blur(12px)', borderColor: 'rgba(5, 5, 23, 0.1)' }}
+                >
                   <div className="flex justify-center gap-6">
                     <div className="text-center">
                       <p className="text-xl font-bold text-white">150+</p>
@@ -62,10 +65,10 @@ const About = () => {
               {/* Title */}
               <h2
                 id="about-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-primary-text)] leading-tight mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
               >
                 A Legacy of{" "}
-                <span className="text-[var(--color-highlight)]">Faith</span>
+                <span className="text-[var(--accent-2)]">Faith</span>
               </h2>
             </header>
 

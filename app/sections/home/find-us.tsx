@@ -24,7 +24,7 @@ const FindUs = () => {
                 id="find-us-heading"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-2"
               >
-                Find <span className="text-[var(--color-highlight)]">Us</span>
+                Find <span className="text-[var(--accent-2)]">Us</span>
               </h2>
 
               <p className="text-[var(--color-secondary-text)] text-lg">
@@ -33,7 +33,7 @@ const FindUs = () => {
             </header>
 
             {/* Main Address Card with Glassmorphism */}
-            <div className="mb-6 rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}>
+            <div className="mb-6 rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)' }}>
               {/* Inner card with glass effect */}
               <div className="p-4">
                 <div className="flex items-start gap-4">
@@ -60,7 +60,7 @@ const FindUs = () => {
             {/* Service Cards - In a row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Sunday Service Card with Glassmorphism */}
-              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}>
+              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)' }}>
                 {/* Inner card with glass effect */}
                 <div className="p-4">
                   <div className="flex items-start gap-3">
@@ -87,12 +87,12 @@ const FindUs = () => {
               </div>
 
               {/* Dawn Service Card with Glassmorphism */}
-              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}>
+              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)' }}>
                 {/* Inner card with glass effect */}
                 <div className="p-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-4 h-4 text-red-600" />
+                    <div className="w-10 h-10 rounded-lg bg-[var(--accent-2)] flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-4 h-4 text-[var(--color-highlight)]" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-[var(--foreground)] font-semibold text-sm mb-1">
@@ -118,7 +118,7 @@ const FindUs = () => {
           {/* Right Column - Map */}
           <div className="order-2 lg:order-2 space-y-6">
             {/* Map with Glassmorphism Frame */}
-            <div className="rounded-2xl p-4 border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 5%, rgba(255, 255, 255, 0.2) 100%)' }}>
+            <div className="rounded-2xl p-4 border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'var(--card-shade)' }}>
               {/* Inner card with glass effect */}
               <div className="rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
                 <div className="h-[300px] lg:h-[400px]">
@@ -138,7 +138,7 @@ const FindUs = () => {
             </div>
 
             {/* Get Directions Card with Glassmorphism */}
-            <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 5%, rgba(255, 255, 255, 0.2) 100%)' }}>
+            <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)' }}>
               {/* Inner card with glass effect */}
               <div className="p-4 ">
                 <div className="flex items-center justify-between">

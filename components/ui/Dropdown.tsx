@@ -32,7 +32,7 @@ export function Dropdown({ trigger, items }: DropdownProps) {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center px-4 py-2 rounded-full text-sm font-normal text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors focus:outline-none cursor-pointer"
+        className="flex items-center px-4 py-2 rounded-full text-sm font-normal text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)] transition-colors focus:outline-none cursor-pointer"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -41,13 +41,16 @@ export function Dropdown({ trigger, items }: DropdownProps) {
       </button>
       
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-lg bg-white shadow-xs ring-1 ring-black/5 focus:outline-none z-50">
+        <div 
+          className="absolute right-0 mt-2 w-48 origin-top-right rounded-lg shadow-xs ring-1 ring-black/5 focus:outline-none z-50"
+          style={{ backgroundColor: 'var(--accent-3)' }}
+        >
           <div className="py-1">
             {items.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                className="block px-4 py-2 text-sm text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]"
               >
                 {item.name}
               </a>

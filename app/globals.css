@@ -1,31 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFF8F0;
-  --foreground: #171717;
-  --color-secondary-background: #ffffff;
-  --color-primary-text: #000000;
-  --color-secondary-text: #363636;
-  --color-highlight: #93140D;
+  /* Custom Palette */
+  
+  /* Core colors */
+  --background: #F9F5ED;
+  --background-2: #141414;
+  --foreground: #050517;
+  --text-color: #050517;
+  
+  /* Accent colors */
+  --accent-1: #392B20;        /* Terracotta - Primary accent */
+  --accent-2: #7E6A52;        /* Golden Sand */
+  --accent-3: #B79C81;       /* Light Gray - for gradients */
+  --accent-4: #E4002B;
+  --accent-5: #daceb6;
+
+  --gradient-shade-1:rgba(218, 206, 182, 0.3);
+  --gradient-shade-2: rgba(126, 106, 82, 0.2);
+
+  --card-shade: rgba(183, 156, 129, 0.2);
+  
+  /* Additional tones */
+  --color-highlight: var(--accent-1);
+  --color-primary-text: var(--foreground);
+  --color-secondary-text: rgba(5, 5, 23, 0.7);
+  
+  /* Glass and border tokens */
   --glass-card-bg: #ffffff;
-  --border-highlight: rgba(147, 20, 13, 0.1)
+  --border: rgba(5, 5, 23, 0.1);
+  --border-highlight: rgba(5, 5, 23, 0.2);
 }
 
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--color-primary-text);
-  --color-secondary-background: var(--color-secondary-background);
-  --color-secondary-text: var(--color-secondary-text);
-  --color-highlight: var(--color-highlight);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --glass-card-bg: var(--glass-card-bg);
-}
-
-
-body {
-  background: var(--background);
-  color: var(--color-primary-text);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }

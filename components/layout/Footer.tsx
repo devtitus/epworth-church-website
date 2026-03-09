@@ -11,7 +11,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[var(--color-background)] text-[var(--color-primary-text)] py-8 border-t border-gray-200 shadow-xs">
+    <footer className="bg-[var(--background)] text-[var(--foreground)] py-8 border-t border-[var(--border)] shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
@@ -22,7 +22,7 @@ const Footer = () => {
               height={120}
             />
             <div>
-              <h3 className="text-xl text-[var(--color-highlight)] font-bold">Epworth Methodist Tamil Church</h3>
+              <h3 className="text-xl text-[var(--accent-4)] font-bold">Epworth Methodist Tamil Church</h3>
               <p className="text-[var(--color-secondary-text)] text-sm">A place of worship and community</p>
             </div>
           </div>
@@ -59,8 +59,8 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-start text-sm text-[var(--color-highlight)]">
+        <div className="mt-8 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center">
+          <div className="text-start text-sm text-[var(--accent-4)]">
             <p>&copy; {new Date().getFullYear()} Epworth Methodist Tamil Church. All rights reserved.</p>
           </div>
           

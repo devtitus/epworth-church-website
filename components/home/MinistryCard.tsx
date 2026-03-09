@@ -40,7 +40,7 @@ const MinistryCard = ({ title, description, image, href = "#" }: MinistryCardPro
           <h3 className="text-white font-bold text-xl mb-2 group-hover:text-[var(--color-highlight)] transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-gray-200 text-sm">
+          <p className="text-white/80 text-sm">
             {description}
           </p>
         </div>

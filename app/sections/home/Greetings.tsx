@@ -3,7 +3,7 @@ import Image from "next/image";
 const Greetings = () => {
   return (
     <section
-      className="relative w-full py-20 lg:py-24 bg-[var(--color-background)]"
+      className="relative w-full py-20 lg:py-24 bg-[var(--background)]"
       aria-labelledby="greetings-heading"
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,10 +19,10 @@ const Greetings = () => {
               {/* Title */}
               <h2
                 id="greetings-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-primary-text)] leading-tight mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
               >
                 A Message of{" "}
-                <span className="text-[var(--color-highlight)]">Welcome</span>
+                <span className="text-[var(--accent-2)]">Welcome</span>
               </h2>
             </header>
 
@@ -57,7 +57,7 @@ const Greetings = () => {
 
             {/* Pastor Info */}
             <div className="flex items-center gap-4 pt-6 border-t border-[var(--color-highlight)]/10">
-              <div className="w-14 h-14 rounded-full bg-white border-2 border-[var(--color-highlight)]/20 overflow-hidden flex-shrink-0">
+              <div className="w-14 h-14 rounded-full bg-[var(--accent-3)] border-2 border-[var(--border-highlight)] overflow-hidden flex-shrink-0">
                 <Image
                   src="/home/pastors-image.png"
                   alt="Rev. Dr. Samuel Matthew"
@@ -68,7 +68,7 @@ const Greetings = () => {
                 />
               </div>
               <div>
-                <p className="text-base font-bold text-[var(--color-primary-text)]">
+                <p className="text-base font-bold text-[var(--foreground)]">
                   Rev. Alvin Raj
                 </p>
                 <p className="text-sm text-[var(--color-highlight)]">
@@ -84,7 +84,7 @@ const Greetings = () => {
               {/* Glass frame effect */}
               <div
                 className="absolute -inset-4 backdrop-blur-md rounded-3xl border border-[var(--border-highlight)]"
-                style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 50%, rgba(255, 255, 255, 0.2) 100%)' }}
+                style={{ background: 'var(--card-shade)' }}
                 aria-hidden="true"
               />
 
@@ -103,7 +103,10 @@ const Greetings = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                 {/* Glass info overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-md border-t border-white/20">
+                <div 
+                  className="absolute bottom-0 left-0 right-0 p-6 border-t"
+                  style={{ background: 'rgba(211, 213, 215, 0.3)', backdropFilter: 'blur(12px)', borderColor: 'rgba(5, 5, 23, 0.1)' }}
+                >
                   <p className="text-white font-semibold">Rev. Alvin Raj</p>
                   <p className="text-white/70 text-sm">Senior Pastor</p>
                 </div>
