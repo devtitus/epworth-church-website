@@ -8,16 +8,6 @@ const About = () => {
       className="relative w-full py-20 lg:py-24 bg-[var(--color-background)]"
       aria-labelledby="about-heading"
     >
-      {/* Background accents */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-highlight)]/5 rounded-full blur-[100px]"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 w-80 h-80 bg-red-900/5 rounded-full blur-[80px]"
-        aria-hidden="true"
-      />
-
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 

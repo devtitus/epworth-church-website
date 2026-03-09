@@ -1,4 +1,4 @@
-import { Hero, Greetings, Find, About } from "@/app/sections/home/index"
+import { Hero, Greetings, Find, About, Ministry } from "@/app/sections/home/index"
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Greetings />
       <About />
       <Find />
+      <Ministry />
     </div>
   );
 }

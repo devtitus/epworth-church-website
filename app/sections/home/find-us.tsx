@@ -8,16 +8,6 @@ const FindUs = () => {
       className="relative w-full py-16 lg:py-24 bg-[var(--background)]"
       aria-labelledby="find-us-heading"
     >
-      {/* Background accents */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-highlight)]/5 rounded-full blur-[100px]"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 w-80 h-80 bg-red-900/5 rounded-full blur-[80px]"
-        aria-hidden="true"
-      />
-
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -43,7 +33,7 @@ const FindUs = () => {
             </header>
 
             {/* Main Address Card with Glassmorphism */}
-            <div className="mb-6 rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 10%, rgba(255, 255, 255, 0.2) 100%)' }}>
+            <div className="mb-6 rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}>
               {/* Inner card with glass effect */}
               <div className="p-4">
                 <div className="flex items-start gap-4">
@@ -70,7 +60,7 @@ const FindUs = () => {
             {/* Service Cards - In a row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Sunday Service Card with Glassmorphism */}
-              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 10%, rgba(255, 255, 255, 0.2) 100%)' }}>
+              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}>
                 {/* Inner card with glass effect */}
                 <div className="p-4">
                   <div className="flex items-start gap-3">
@@ -97,7 +87,7 @@ const FindUs = () => {
               </div>
 
               {/* Dawn Service Card with Glassmorphism */}
-              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 10%, rgba(255, 255, 255, 0.2) 100%)' }}>
+              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)' }}>
                 {/* Inner card with glass effect */}
                 <div className="p-4">
                   <div className="flex items-start gap-3">
