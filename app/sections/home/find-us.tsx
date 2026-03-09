@@ -43,7 +43,7 @@ const FindUs = () => {
             </header>
 
             {/* Main Address Card with Glassmorphism */}
-            <div className="mb-6 rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 50%, rgba(255, 255, 255, 0.2) 100%)' }}>
+            <div className="mb-6 rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 10%, rgba(255, 255, 255, 0.2) 100%)' }}>
               {/* Inner card with glass effect */}
               <div className="p-4">
                 <div className="flex items-start gap-4">
@@ -70,7 +70,7 @@ const FindUs = () => {
             {/* Service Cards - In a row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Sunday Service Card with Glassmorphism */}
-              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 5%, rgba(255, 255, 255, 0.2) 100%)' }}>
+              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 10%, rgba(255, 255, 255, 0.2) 100%)' }}>
                 {/* Inner card with glass effect */}
                 <div className="p-4">
                   <div className="flex items-start gap-3">
@@ -97,7 +97,7 @@ const FindUs = () => {
               </div>
 
               {/* Dawn Service Card with Glassmorphism */}
-              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 5%, rgba(255, 255, 255, 0.2) 100%)' }}>
+              <div className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs" style={{ background: 'linear-gradient(0deg, rgba(147, 20, 13, 0.10) 10%, rgba(255, 255, 255, 0.2) 100%)' }}>
                 {/* Inner card with glass effect */}
                 <div className="p-4">
                   <div className="flex items-start gap-3">
