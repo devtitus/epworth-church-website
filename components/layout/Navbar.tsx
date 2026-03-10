@@ -49,8 +49,8 @@ const Navbar = () => {
                 href="/"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
                   isActive('/')
-                    ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
-                    : 'text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)]'
+                    ? 'text-[var(--accent-1)] bg-[var(--accent-5)]/70'
+                    : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
                 }`}
               >
                 Home
@@ -59,8 +59,8 @@ const Navbar = () => {
                 href="/about"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
                   isActive('/about')
-                    ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
-                    : 'text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)]'
+                    ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
+                    : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
                 }`}
               >
                 About
@@ -77,8 +77,8 @@ const Navbar = () => {
                 href="/contact"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
                   isActive('/contact')
-                    ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
-                    : 'text-[var(--foreground)] hover:bg-[var(--accent-3)] hover:text-[var(--foreground)]'
+                    ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
+                    : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
                 }`}
               >
                 Contact
@@ -106,8 +106,8 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 isActive('/')
-                  ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
-                  : 'text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]'
+                  ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
+                  : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
               }`}
             >
               Home
@@ -117,8 +117,8 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 isActive('/about')
-                  ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
-                  : 'text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]'
+                  ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
+                  : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
               }`}
             >
               About
@@ -133,7 +133,7 @@ const Navbar = () => {
                 key={org.name}
                 href={org.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]"
+                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
               >
                 {org.name}
               </Link>
@@ -148,7 +148,7 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]"
+                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
               >
                 {item.name}
               </Link>
@@ -158,8 +158,8 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 isActive('/contact')
-                  ? 'text-[var(--color-highlight)] bg-[var(--accent-2)]'
-                  : 'text-[var(--foreground)] hover:bg-[var(--accent-2)] hover:text-[var(--foreground)]'
+                  ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
+                  : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
               }`}
             >
               Contact

@@ -52,9 +52,8 @@ const Hero = () => {
               </h1>
 
               {/* Description */}
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                Where faith, community, and hope converge. Experience transformative worship 
-                and genuine fellowship as we journey together in God's love.
+              <p className="text-base md:text-base text-white/80 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                Find your place in our story. At Epworth MTC, faith, community, and hope converge. We are a vibrant family dedicated to following Christ and serving our city with love. We invite you to join our Sunday worship and discover a community where you are known, loved, and encouraged to grow. You aren’t just a visitor here—you’re family.
               </p>
 
               {/* CTA Buttons */}
