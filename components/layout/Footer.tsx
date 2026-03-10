@@ -14,14 +14,14 @@ const Footer = () => {
     <footer className="bg-[var(--background)] text-[var(--foreground)] py-8 border-t border-[var(--border)] shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start">
-          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+          <div className="flex items-start space-x-4 mb-4 md:mb-0">
             <Image
               src="/logo/footer_logo.svg"
               alt="Epworth Church Footer Logo"
               width={66}
               height={120}
             />
-            <div>
+            <div className='mt-4'>
               <h3 className="text-xl text-[var(--accent-4)] font-bold">Epworth Methodist Tamil Church</h3>
               <p className="text-[var(--color-secondary-text)] text-sm">A place of worship and community</p>
             </div>
@@ -29,7 +29,7 @@ const Footer = () => {
           
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8">
             <div>
-              <h4 className="font-semibold text-sm mb-2">Quick Links</h4>
+              <h4 className="font-semibold text-[var(--accent-2)] text-sm mb-2">Quick Links</h4>
               <ul className="space-y-1">
                 <li><Link href="/" className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]">Home</Link></li>
                 <li><Link href="/about" className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]">About</Link></li>
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-sm mb-2">Organizations</h4>
+              <h4 className="font-semibold text-[var(--accent-2)] text-sm mb-2">Organizations</h4>
               <ul className="space-y-1">
                 <li><Link href="/sermons" className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]">Sunday School</Link></li>
                 <li><Link href="/sermons" className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]">EMTeens</Link></li>
@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-sm mb-2">From the Church</h4>
+              <h4 className="font-semibold text-[var(--accent-2)] text-sm mb-2">From the Church</h4>
               <ul className="space-y-1">
                 <li><Link href="/events" className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]">Blogs</Link></li>
                 <li><Link href="/events" className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]">Announcements</Link></li>
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center">
-          <div className="text-start text-sm text-[var(--accent-4)]">
+          <div className="text-start text-sm text-[var(--accent-2)]">
             <p>&copy; {new Date().getFullYear()} Epworth Methodist Tamil Church. All rights reserved.</p>
           </div>
           

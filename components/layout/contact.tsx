@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Heart } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 interface ContactSectionProps {
   tagline?: string;
@@ -66,7 +67,7 @@ const ContactSection = ({
             </h2>
 
             {/* Description */}
-            <p className="text-white/60 text-lg max-w-2xl mb-10">
+            <p className="text-white/70 text-base max-w-2xl mb-8">
               {description}
             </p>
 
@@ -91,13 +92,11 @@ const ContactSection = ({
               </div>
 
               {/* CTA Button - on the right */}
-              <Link
-                href={buttonHref}
-                className="group relative inline-flex items-center gap-3 px-10 py-4 border border-[var(--border-highlight)] backdrop-blur-lg text-[var(--foreground)] font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-[var(--color-highlight)] hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-[var(--color-highlight)]/25"
-                style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.8) 0%, rgba(211, 213, 215, 0.3) 100%)' }}
-              >
-                <span>{buttonText}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Link href={buttonHref}>
+                <Button variant="primary" className="text-lg px-10">
+                  {buttonText}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </Link>
             </div>
           </div>

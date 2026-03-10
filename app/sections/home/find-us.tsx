@@ -27,7 +27,7 @@ const FindUs = () => {
                 Find <span className="text-[var(--accent-2)]">Us</span>
               </h2>
 
-              <p className="text-[var(--color-secondary-text)] text-lg">
+              <p className="text-[var(--color-secondary-text)] text-base">
                 Join us for worship and experience the warmth of our community
               </p>
             </header>

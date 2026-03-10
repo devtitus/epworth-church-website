@@ -9,7 +9,7 @@ const About = () => {
       aria-labelledby="about-heading"
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Left Column - Church Image with Glass Effect Card */}
           <div className="order-1 lg:order-1">
@@ -74,7 +74,7 @@ const About = () => {
 
             {/* About Message */}
             <div className="mb-8">
-              <p className="text-lg text-[var(--color-secondary-text)] leading-relaxed mb-4">
+              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
                 Founded in 1874, Epworth Methodist Tamil Church has been a
                 beacon of hope and faith for over a century and a half. Our
                 church traces its roots to the Methodist missionary movement,
@@ -96,8 +96,8 @@ const About = () => {
 
             {/* CTA Button */}
             <Link href="/about">
-              <Button variant="primary" className="px-8 py-4 text-base font-semibold">
-                Learn More About Us
+              <Button variant="primary" className="text-base font-medium">
+                Learn More
               </Button>
             </Link>
           </div>

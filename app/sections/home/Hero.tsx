@@ -19,8 +19,8 @@ const Hero = () => {
           sizes="100vw"
         />
         {/* Sophisticated overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/70" />
       </div>
 
       {/* Main Content */}
@@ -46,7 +46,7 @@ const Hero = () => {
                 Epworth Methodist{' '}
                 <span className="block mt-2">
                   <span className="inline-block">
-                    <span className='text-[var(--accent-4)]'>Tamil </span>Church
+                    <span className='text-[var(--accent-5)]'>Tamil </span>Church
                   </span>
                 </span>
               </h1>
@@ -55,15 +55,6 @@ const Hero = () => {
               <p className="text-base md:text-base text-white/80 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
                 Find your place in our story. At Epworth MTC, faith, community, and hope converge. We are a vibrant family dedicated to following Christ and serving our city with love. We invite you to join our Sunday worship and discover a community where you are known, loved, and encouraged to grow. You aren’t just a visitor here—you’re family.
               </p>
-
-              {/* CTA Buttons */}
-              <nav aria-label="Hero actions">
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button variant="secondary" className="px-8 py-4 text-base font-semibold flex items-center justify-center gap-2">
-                    Learn More About Us
-                  </Button>
-                </div>
-              </nav>
             </header>
 
             {/* Right Column - Stats Card */}

@@ -5,42 +5,42 @@ import MinistryCard from "@/components/home/MinistryCard";
 const ministries = [
   {
     id: 1,
-    title: "Worship Team",
+    title: "Sunday School",
     description: "Leading our congregation in praise and worship",
     image: "/home/1.jpg",
     href: "/ministries/worship",
   },
   {
     id: 2,
-    title: "Youth Ministry",
+    title: "EMTeens",
     description: "Discipling the next generation of believers",
     image: "/home/1.jpg",
     href: "/ministries/youth",
   },
   {
     id: 3,
-    title: "Children's Ministry",
+    title: "MYF",
     description: "Nurturing young hearts for Jesus",
     image: "/home/1.jpg",
     href: "/ministries/children",
   },
   {
     id: 4,
-    title: "Prayer Ministry",
+    title: "WSCS",
     description: "Interceding for our church and community",
     image: "/home/1.jpg",
     href: "/ministries/prayer",
   },
   {
     id: 5,
-    title: "Care Ministry",
+    title: "Methodist Men",
     description: "Supporting those in need within our community",
     image: "/home/1.jpg",
     href: "/ministries/care",
   },
   {
     id: 6,
-    title: "Outreach Ministry",
+    title: "EMTC Choir",
     description: "Sharing God's love beyond our walls",
     image: "/home/1.jpg",
     href: "/ministries/outreach",
@@ -69,7 +69,7 @@ const Ministry = () => {
             Serve <span className="text-[var(--accent-2)]">With Us</span>
           </h2>
 
-          <p className="text-[var(--color-secondary-text)] text-lg max-w-2xl mx-auto">
+          <p className="text-[var(--color-secondary-text)] text-base max-w-2xl mx-auto">
             Find your place to serve and grow in faith with our various ministry teams
           </p>
         </header>

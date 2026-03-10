@@ -7,7 +7,7 @@ const Greetings = () => {
       aria-labelledby="greetings-heading"
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Column - Greeting Content */}
           <div className="order-2 lg:order-1">
             <header>
@@ -28,7 +28,7 @@ const Greetings = () => {
 
             {/* Greeting Message */}
             <div className="mb-8">
-              <p className="text-lg text-[var(--color-secondary-text)] leading-relaxed mb-4">
+              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
                 Dear Brothers and Sisters in Christ,
               </p>
               <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
