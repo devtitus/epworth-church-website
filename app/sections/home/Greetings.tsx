@@ -80,13 +80,7 @@ const Greetings = () => {
 
           {/* Right Column - Pastor Image with Glass Effect */}
           <div className="order-1 lg:order-2">
-            <div className="relative">
-              {/* Glass frame effect */}
-              <div
-                className="absolute -inset-4 backdrop-blur-md rounded-3xl border border-[var(--border-highlight)]"
-                style={{ background: 'var(--card-shade)' }}
-                aria-hidden="true"
-              />
+            <div className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-md" style={{ background: 'var(--card-shade)' }}>
 
               {/* Image Container */}
               <div className="relative aspect-[1/1] rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
