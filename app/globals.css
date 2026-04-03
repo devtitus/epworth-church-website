@@ -30,6 +30,12 @@
   --glass-card-bg: #ffffff;
   --border: rgba(5, 5, 23, 0.1);
   --border-highlight: rgba(5, 5, 23, 0.2);
+
+  /* About / marketing: alternate surfaces & placeholders */
+  --surface-paper: #ffffff;
+  --media-placeholder: #d9d9d9;
+  --media-placeholder-strong: #d1d5db;
+  --surface-card-muted: #f3f4f6;
 }
 
 @layer base {
