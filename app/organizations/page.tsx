@@ -1,0 +1,41 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { organizationList } from "@/lib/data/organizations";
+
+export const metadata: Metadata = {
+  title: "Organizations | Epworth Methodist Tamil Church",
+  description: "Discover our church organizations and ministries",
+};
+
+export default function OrganizationsPage() {
+  return (
+    <main className="w-full py-20 lg:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] mb-4">
+          Our <span className="text-[var(--accent-2)]">Organizations</span>
+        </h1>
+        <p className="text-[var(--color-secondary-text)] text-lg mb-12 max-w-2xl">
+          Explore the various ministries and organizations that make up our church community
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {organizationList.map((org) => (
+            <Link
+              key={org.slug}
+              href={`/organizations/${org.slug}`}
+              className="rounded-2xl border border-[var(--border-highlight)] p-6 hover:shadow-md transition-shadow"
+              style={{ background: "var(--card-shade)" }}
+            >
+              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
+                {org.name}
+              </h2>
+              <p className="text-[var(--color-secondary-text)] text-sm">
+                {org.tagline}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}

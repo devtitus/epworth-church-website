@@ -8,11 +8,11 @@ import { Dropdown } from '@/components/ui/Dropdown'
 
 // Organization items shown in dropdown
 const organizationLinks = [
-  { name: 'Sunday School', href: '/sermons' },
-  { name: 'EMTeens', href: '/sermons' },
-  { name: 'MYF', href: '/sermons' },
-  { name: 'WSCS', href: '/sermons' },
-  { name: 'Methodist Men', href: '/sermons' },
+  { name: 'Sunday School', href: '/organizations/sunday-school' },
+  { name: 'EMTeens', href: '/organizations/emteens' },
+  { name: 'MYF', href: '/organizations/myf' },
+  { name: 'WSCS', href: '/organizations/wscs' },
+  { name: 'Methodist Men', href: '/organizations/methodist-men' },
 ]
 
 // From the Church items shown in dropdown
