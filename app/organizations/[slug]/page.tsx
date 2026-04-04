@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { organizations } from "@/lib/data/organizations";
 import OrgHero from "@/app/sections/organizations/OrgHero";
+import OrgAbout from "@/app/sections/organizations/OrgAbout";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -44,9 +45,10 @@ export default async function OrganizationPage({ params }: PageProps) {
         heroImage={org.heroImage}
       />
 
+      <OrgAbout title={org.aboutTitle} content={org.aboutContent} />
+
       {/*
         TODO: Wire up remaining sections as they are implemented.
-        <OrgAbout ... />
         <OrgActivities ... />
         <OrgLeaders ... />
       */}
