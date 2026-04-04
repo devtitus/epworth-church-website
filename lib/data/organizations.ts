@@ -21,6 +21,10 @@ export interface Organization {
   activities: Activity[];
   leadersTitle: string;
   leaders: Leader[];
+  noteTitle: string;
+  noteContent: string[];
+  noteAuthor: string;
+  activitiesGridTitle: string;
 }
 
 export const organizations: Record<string, Organization> = {
@@ -61,6 +65,14 @@ export const organizations: Record<string, Organization> = {
       { name: "Teacher Name", title: "Class Teacher - Ages 4-6" },
       { name: "Teacher Name", title: "Class Teacher - Ages 7-12" },
     ],
+    noteTitle: "A Note From Sunday School",
+    noteContent: [
+      "Lorem ipsum dolor sit amet consectetur. Accumsan facilisis eget eget egestas quis eu quam aenean. Mattis urna eget ipsum non vivamus placerat placerat. Dictumst dis interdum eros ipsum auctor aliquam. Quam nibh tristique velit tristique volutpat felis dictumst.",
+      "Pellentesque vel tellus dui volutpat mattis. Sem consectetur massa feugiat vulputate penatibus sem ornare dignissim. Nam mattis penatibus eu aliquet rhoncus enim nulla. Quis sagittis dolor ut in lacus non. Sed viverra vitae feugiat vestibulum mauris. Accumsan cras lacus vitae nulla.",
+      "Malesuada ipsum et eu ipsum lorem. Mauris pulvinar adipiscing duis risus turpis ac scelerisque. Etiam adipiscing cursus vitae lectus sagittis commodo. Mattis lectus habitant ligula aliquam.",
+    ],
+    noteAuthor: "Sunday School Superintendent",
+    activitiesGridTitle: "Know More About Us",
   },
   emteens: {
     slug: "emteens",
@@ -95,6 +107,14 @@ export const organizations: Record<string, Organization> = {
       { name: "Leader Name", title: "Youth Coordinator" },
       { name: "Leader Name", title: "Youth Worker" },
     ],
+    noteTitle: "A Note From EMTeens",
+    noteContent: [
+      "Lorem ipsum dolor sit amet consectetur. Accumsan facilisis eget eget egestas quis eu quam aenean. Mattis urna eget ipsum non vivamus placerat placerat. Dictumst dis interdum eros ipsum auctor aliquam. Quam nibh tristique velit tristique volutpat felis dictumst.",
+      "Pellentesque vel tellus dui volutpat mattis. Sem consectetur massa feugiat vulputate penatibus sem ornare dignissim. Nam mattis penatibus eu aliquet rhoncus enim nulla. Quis sagittis dolor ut in lacus non. Sed viverra vitae feugiat vestibulum mauris. Accumsan cras lacus vitae nulla.",
+      "Malesuada ipsum et eu ipsum lorem. Mauris pulvinar adipiscing duis risus turpis ac scelerisque. Etiam adipiscing cursus vitae lectus sagittis commodo. Mattis lectus habitant ligula aliquam.",
+    ],
+    noteAuthor: "Youth Pastor",
+    activitiesGridTitle: "Know More About Us",
   },
   myf: {
     slug: "myf",
@@ -132,6 +152,14 @@ export const organizations: Record<string, Organization> = {
       { name: "Leader Name", title: "Vice President" },
       { name: "Leader Name", title: "Secretary" },
     ],
+    noteTitle: "A Note From MYF",
+    noteContent: [
+      "Lorem ipsum dolor sit amet consectetur. Accumsan facilisis eget eget egestas quis eu quam aenean. Mattis urna eget ipsum non vivamus placerat placerat. Dictumst dis interdum eros ipsum auctor aliquam. Quam nibh tristique velit tristique volutpat felis dictumst.",
+      "Pellentesque vel tellus dui volutpat mattis. Sem consectetur massa feugiat vulputate penatibus sem ornare dignissim. Nam mattis penatibus eu aliquet rhoncus enim nulla. Quis sagittis dolor ut in lacus non. Sed viverra vitae feugiat vestibulum mauris. Accumsan cras lacus vitae nulla.",
+      "Malesuada ipsum et eu ipsum lorem. Mauris pulvinar adipiscing duis risus turpis ac scelerisque. Etiam adipiscing cursus vitae lectus sagittis commodo. Mattis lectus habitant ligula aliquam.",
+    ],
+    noteAuthor: "MYF President",
+    activitiesGridTitle: "Know More About Us",
   },
   wscs: {
     slug: "wscs",
@@ -163,6 +191,14 @@ export const organizations: Record<string, Organization> = {
       { name: "Leader Name", title: "Vice President" },
       { name: "Leader Name", title: "Secretary" },
     ],
+    noteTitle: "A Note From WSCS",
+    noteContent: [
+      "Lorem ipsum dolor sit amet consectetur. Accumsan facilisis eget eget egestas quis eu quam aenean. Mattis urna eget ipsum non vivamus placerat placerat. Dictumst dis interdum eros ipsum auctor aliquam. Quam nibh tristique velit tristique volutpat felis dictumst.",
+      "Pellentesque vel tellus dui volutpat mattis. Sem consectetur massa feugiat vulputate penatibus sem ornare dignissim. Nam mattis penatibus eu aliquet rhoncus enim nulla. Quis sagittis dolor ut in lacus non. Sed viverra vitae feugiat vestibulum mauris. Accumsan cras lacus vitae nulla.",
+      "Malesuada ipsum et eu ipsum lorem. Mauris pulvinar adipiscing duis risus turpis ac scelerisque. Etiam adipiscing cursus vitae lectus sagittis commodo. Mattis lectus habitant ligula aliquam.",
+    ],
+    noteAuthor: "WSCS President",
+    activitiesGridTitle: "Know More About Us",
   },
   "methodist-men": {
     slug: "methodist-men",
@@ -197,6 +233,14 @@ export const organizations: Record<string, Organization> = {
       { name: "Leader Name", title: "Vice President" },
       { name: "Leader Name", title: "Secretary" },
     ],
+    noteTitle: "A Note From Methodist Men",
+    noteContent: [
+      "Lorem ipsum dolor sit amet consectetur. Accumsan facilisis eget eget egestas quis eu quam aenean. Mattis urna eget ipsum non vivamus placerat placerat. Dictumst dis interdum eros ipsum auctor aliquam. Quam nibh tristique velit tristique volutpat felis dictumst.",
+      "Pellentesque vel tellus dui volutpat mattis. Sem consectetur massa feugiat vulputate penatibus sem ornare dignissim. Nam mattis penatibus eu aliquet rhoncus enim nulla. Quis sagittis dolor ut in lacus non. Sed viverra vitae feugiat vestibulum mauris. Accumsan cras lacus vitae nulla.",
+      "Malesuada ipsum et eu ipsum lorem. Mauris pulvinar adipiscing duis risus turpis ac scelerisque. Etiam adipiscing cursus vitae lectus sagittis commodo. Mattis lectus habitant ligula aliquam.",
+    ],
+    noteAuthor: "Methodist Men President",
+    activitiesGridTitle: "Know More About Us",
   },
   choir: {
     slug: "choir",
@@ -234,6 +278,14 @@ export const organizations: Record<string, Organization> = {
       { name: "Leader Name", title: "Assistant Director" },
       { name: "Leader Name", title: "Pianist/Organist" },
     ],
+    noteTitle: "A Note From EMTC Choir",
+    noteContent: [
+      "Lorem ipsum dolor sit amet consectetur. Accumsan facilisis eget eget egestas quis eu quam aenean. Mattis urna eget ipsum non vivamus placerat placerat. Dictumst dis interdum eros ipsum auctor aliquam. Quam nibh tristique velit tristique volutpat felis dictumst.",
+      "Pellentesque vel tellus dui volutpat mattis. Sem consectetur massa feugiat vulputate penatibus sem ornare dignissim. Nam mattis penatibus eu aliquet rhoncus enim nulla. Quis sagittis dolor ut in lacus non. Sed viverra vitae feugiat vestibulum mauris. Accumsan cras lacus vitae nulla.",
+      "Malesuada ipsum et eu ipsum lorem. Mauris pulvinar adipiscing duis risus turpis ac scelerisque. Etiam adipiscing cursus vitae lectus sagittis commodo. Mattis lectus habitant ligula aliquam.",
+    ],
+    noteAuthor: "Choir Director",
+    activitiesGridTitle: "Know More About Us",
   },
 };
 

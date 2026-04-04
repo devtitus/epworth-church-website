@@ -5,6 +5,7 @@ import OrgHero from "@/app/sections/organizations/OrgHero";
 import OrgAbout from "@/app/sections/organizations/OrgAbout";
 import OrgActivities from "@/app/sections/organizations/OrgActivities";
 import OrgNote from "@/app/sections/organizations/OrgLeaders";
+import OrgActivitiesGrid from "@/app/sections/organizations/OrgActivitiesGrid";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -56,6 +57,8 @@ export default async function OrganizationPage({ params }: PageProps) {
         content={org.noteContent}
         authorName={org.noteAuthor}
       />
+
+      <OrgActivitiesGrid title={org.activitiesGridTitle} />
     </main>
   );
 }
