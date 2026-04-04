@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { organizations } from "@/lib/data/organizations";
 import OrgHero from "@/app/sections/organizations/OrgHero";
 import OrgAbout from "@/app/sections/organizations/OrgAbout";
+import OrgActivities from "@/app/sections/organizations/OrgActivities";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -47,9 +48,10 @@ export default async function OrganizationPage({ params }: PageProps) {
 
       <OrgAbout title={org.aboutTitle} content={org.aboutContent} />
 
+      <OrgActivities title={org.activitiesTitle} activities={org.activities} />
+
       {/*
         TODO: Wire up remaining sections as they are implemented.
-        <OrgActivities ... />
         <OrgLeaders ... />
       */}
     </main>
