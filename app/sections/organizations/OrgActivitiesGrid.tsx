@@ -7,6 +7,10 @@ const OrgActivitiesGrid = ({
   label = "Our Activities",
   title,
 }: OrgActivitiesGridProps) => {
+  const titleParts = title.split(" ");
+  const lastWord = titleParts.pop() || "";
+  const firstWords = titleParts.join(" ");
+
   return (
     <section
       className="relative w-full bg-[var(--background)] py-20 lg:py-24"
@@ -15,14 +19,15 @@ const OrgActivitiesGrid = ({
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="text-center mb-12 lg:mb-16">
-          <p className="text-sm font-normal text-[var(--color-secondary-text)] mb-2">
+          <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
             {label}
-          </p>
+          </span>
           <h2
             id="org-activities-grid-heading"
-            className="text-2xl md:text-3xl font-bold text-[var(--foreground)]"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight"
           >
-            {title}
+            {firstWords}{" "}
+            <span className="text-[var(--accent-2)]">{lastWord}</span>
           </h2>
         </header>
 

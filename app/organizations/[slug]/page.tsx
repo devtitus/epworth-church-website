@@ -52,7 +52,11 @@ export default async function OrganizationPage({ params }: PageProps) {
 
       <OrgAbout title={org.aboutTitle} content={org.aboutContent} />
 
-      <OrgActivities title={org.activitiesTitle} activities={org.activities} />
+      <OrgActivities
+        label="Schedule"
+        title={org.activitiesTitle}
+        activities={org.activities}
+      />
 
       <OrgNote
         title={org.noteTitle}
