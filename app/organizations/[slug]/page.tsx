@@ -6,6 +6,8 @@ import OrgAbout from "@/app/sections/organizations/OrgAbout";
 import OrgActivities from "@/app/sections/organizations/OrgActivities";
 import OrgNote from "@/app/sections/organizations/OrgLeaders";
 import OrgActivitiesGrid from "@/app/sections/organizations/OrgActivitiesGrid";
+import OrgGallery from "@/app/sections/organizations/OrgGallery";
+import { Contact } from "@/components/layout/index";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -59,6 +61,16 @@ export default async function OrganizationPage({ params }: PageProps) {
       />
 
       <OrgActivitiesGrid title={org.activitiesGridTitle} />
+
+      <OrgGallery title={org.galleryTitle} />
+
+      <Contact
+        tagline="Stay Connected"
+        title="Join Our Community"
+        description="We'd love to have you be a part of our organization. Reach out to learn more about how you can get involved."
+        buttonText="Get in Touch"
+        buttonHref="/contact"
+      />
     </main>
   );
 }

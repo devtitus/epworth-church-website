@@ -25,6 +25,7 @@ export interface Organization {
   noteContent: string[];
   noteAuthor: string;
   activitiesGridTitle: string;
+  galleryTitle: string;
 }
 
 export const organizations: Record<string, Organization> = {
@@ -73,6 +74,7 @@ export const organizations: Record<string, Organization> = {
     ],
     noteAuthor: "Sunday School Superintendent",
     activitiesGridTitle: "Know More About Us",
+    galleryTitle: "Our Photos",
   },
   emteens: {
     slug: "emteens",
@@ -115,6 +117,7 @@ export const organizations: Record<string, Organization> = {
     ],
     noteAuthor: "Youth Pastor",
     activitiesGridTitle: "Know More About Us",
+    galleryTitle: "Our Photos",
   },
   myf: {
     slug: "myf",
@@ -160,6 +163,7 @@ export const organizations: Record<string, Organization> = {
     ],
     noteAuthor: "MYF President",
     activitiesGridTitle: "Know More About Us",
+    galleryTitle: "Our Photos",
   },
   wscs: {
     slug: "wscs",
@@ -199,6 +203,7 @@ export const organizations: Record<string, Organization> = {
     ],
     noteAuthor: "WSCS President",
     activitiesGridTitle: "Know More About Us",
+    galleryTitle: "Our Photos",
   },
   "methodist-men": {
     slug: "methodist-men",
@@ -241,6 +246,7 @@ export const organizations: Record<string, Organization> = {
     ],
     noteAuthor: "Methodist Men President",
     activitiesGridTitle: "Know More About Us",
+    galleryTitle: "Our Photos",
   },
   choir: {
     slug: "choir",
@@ -286,6 +292,7 @@ export const organizations: Record<string, Organization> = {
     ],
     noteAuthor: "Choir Director",
     activitiesGridTitle: "Know More About Us",
+    galleryTitle: "Our Photos",
   },
 };
 
