@@ -4,6 +4,7 @@ import { organizations } from "@/lib/data/organizations";
 import OrgHero from "@/app/sections/organizations/OrgHero";
 import OrgAbout from "@/app/sections/organizations/OrgAbout";
 import OrgActivities from "@/app/sections/organizations/OrgActivities";
+import OrgNote from "@/app/sections/organizations/OrgLeaders";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -50,10 +51,11 @@ export default async function OrganizationPage({ params }: PageProps) {
 
       <OrgActivities title={org.activitiesTitle} activities={org.activities} />
 
-      {/*
-        TODO: Wire up remaining sections as they are implemented.
-        <OrgLeaders ... />
-      */}
+      <OrgNote
+        title={org.noteTitle}
+        content={org.noteContent}
+        authorName={org.noteAuthor}
+      />
     </main>
   );
 }
