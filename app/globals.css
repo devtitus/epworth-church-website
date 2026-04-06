@@ -38,6 +38,19 @@
   --surface-card-muted: #f3f4f6;
 }
 
+@keyframes marqueeVertical {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+.animate-marquee-vertical {
+  animation: marqueeVertical 35s linear infinite;
+}
+
+.animate-marquee-vertical:hover {
+  animation-play-state: paused;
+}
+
 @layer base {
   body {
     background: var(--background);

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Clock, MapPin } from 'lucide-react';
+import { NewsMarquee } from './NewsMarquee';
 
 const Hero = () => {
   return (
@@ -57,97 +58,15 @@ const Hero = () => {
               </p>
             </header>
 
-            {/* Right Column - Stats Card */}
-            <aside className="hidden lg:block" aria-label="Church statistics and service information">
-              <article 
-                className="relative rounded-3xl border border-[var(--border-highlight)] p-8"
-                style={{ background: 'rgba(211, 213, 215, 0.15)', backdropFilter: 'blur(20px)' }}
-              >
-                {/* Welcome Text */}
-                <div className="text-center mb-8">
-                  <h2 className="text-white text-2xl font-bold mb-2">Welcome to Our</h2>
-                  <p className="text-white/60">Church Family</p>
-                </div>
-
-                {/* Simple Stats Row */}
-                <dl className="flex justify-center gap-8 mb-8">
-                  <div className="text-center">
-                    <dt className="sr-only">Years of heritage</dt>
-                    <dd className="text-4xl font-bold text-white mb-1">150+</dd>
-                    <dd className="text-sm text-white/50">Years</dd>
-                  </div>
-                  <div className="w-px h-12 bg-white/20" aria-hidden="true" />
-                  <div className="text-center">
-                    <dt className="sr-only">Total members</dt>
-                    <dd className="text-4xl font-bold text-white mb-1">500+</dd>
-                    <dd className="text-sm text-white/50">Members</dd>
-                  </div>
-                  <div className="w-px h-12 bg-white/20" aria-hidden="true" />
-                  <div className="text-center">
-                    <dt className="sr-only">Active ministries</dt>
-                    <dd className="text-4xl font-bold text-white mb-1">5+</dd>
-                    <dd className="text-sm text-white/50">Ministries</dd>
-                  </div>
-                </dl>
-
-                {/* Service Info */}
-                <address className="flex items-center justify-center gap-8 p-4 rounded-2xl not-italic" style={{ background: 'rgba(211, 213, 215, 0.1)' }}>
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-[var(--color-highlight)]" aria-hidden="true" />
-                    <time className="text-white font-medium" dateTime="2024-01-07T08:30">8:30 AM</time>
-                  </div>
-                  <div className="w-px h-6 bg-white/20" aria-hidden="true" />
-                  <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-[var(--color-highlight)]" aria-hidden="true" />
-                    <span className="text-white font-medium">Navi Mumbai, Maharashtra</span>
-                  </div>
-                </address>
-              </article>
+            {/* Right Column - Updates Marquee */}
+            <aside className="hidden lg:block w-full max-w-md ml-auto" aria-label="Latest Church Updates">
+               <NewsMarquee />
             </aside>
           </div>
 
-          {/* Mobile Stats (visible only on small screens) */}
-          <div className="lg:hidden mt-10" aria-label="Church statistics and service information">
-            <article 
-              className="relative rounded-2xl border border-[var(--border-highlight)] p-6"
-              style={{ background: 'rgba(211, 213, 215, 0.15)', backdropFilter: 'blur(20px)' }}
-            >
-              <div className="text-center mb-6">
-                <h2 className="text-white text-xl font-bold mb-1">Welcome to Our Church Family</h2>
-              </div>
-              
-              {/* Simple Stats Row */}
-              <dl className="flex justify-center gap-6 mb-6">
-                <div className="text-center">
-                  <dt className="sr-only">Years of heritage</dt>
-                  <dd className="text-3xl font-bold text-white mb-1">150+</dd>
-                  <dd className="text-xs text-white/50">Years</dd>
-                </div>
-                <div className="w-px h-10 bg-white/20" aria-hidden="true" />
-                <div className="text-center">
-                  <dt className="sr-only">Total members</dt>
-                  <dd className="text-3xl font-bold text-white mb-1">500+</dd>
-                  <dd className="text-xs text-white/50">Members</dd>
-                </div>
-                <div className="w-px h-10 bg-white/20" aria-hidden="true" />
-                <div className="text-center">
-                  <dt className="sr-only">Active ministries</dt>
-                  <dd className="text-3xl font-bold text-white mb-1">5+</dd>
-                  <dd className="text-xs text-white/50">Ministries</dd>
-                </div>
-              </dl>
-              
-              <address className="flex items-center justify-center gap-6 text-sm not-italic">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[var(--color-highlight)]" aria-hidden="true" />
-                  <time className="text-white" dateTime="2024-01-07T09:00">9:00 AM</time>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[var(--color-highlight)]" aria-hidden="true" />
-                  <span className="text-white">Chennai</span>
-                </div>
-              </address>
-            </article>
+          {/* Mobile Latest Updates */}
+          <div className="lg:hidden mt-10" aria-label="Latest Church Updates">
+             <NewsMarquee />
           </div>
         </div>
       </div>
