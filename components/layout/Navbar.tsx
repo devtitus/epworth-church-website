@@ -17,7 +17,7 @@ const organizationLinks = [
 
 // From the Church items shown in dropdown
 const fromChurchLinks = [
-  { name: "Blogs", href: "/events" },
+  { name: "Blogs", href: "/blogs" },
   { name: "Announcements", href: "/announcements" },
 ];
 
