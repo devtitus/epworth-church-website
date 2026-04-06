@@ -1,31 +1,31 @@
 "use client";
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
-import { Dropdown } from '@/components/ui/Dropdown'
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { Dropdown } from "@/components/ui/Dropdown";
 
 // Organization items shown in dropdown
 const organizationLinks = [
-  { name: 'Sunday School', href: '/organizations/sunday-school' },
-  { name: 'EMTeens', href: '/organizations/emteens' },
-  { name: 'MYF', href: '/organizations/myf' },
-  { name: 'WSCS', href: '/organizations/wscs' },
-  { name: 'Methodist Men', href: '/organizations/methodist-men' },
-]
+  { name: "Sunday School", href: "/organizations/sunday-school" },
+  { name: "EMTeens", href: "/organizations/emteens" },
+  { name: "MYF", href: "/organizations/myf" },
+  { name: "WSCS", href: "/organizations/wscs" },
+  { name: "Methodist Men", href: "/organizations/methodist-men" },
+];
 
 // From the Church items shown in dropdown
 const fromChurchLinks = [
-  { name: 'Blogs', href: '/events' },
-  { name: 'Announcements', href: '/events' },
-]
+  { name: "Blogs", href: "/events" },
+  { name: "Announcements", href: "/announcements" },
+];
 
 const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const isActive = (href: string) => pathname === href
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav className="sticky top-0 z-50 bg-[var(--background)] shadow-xs border-b border-[var(--border)] flex-shrink-0">
@@ -48,9 +48,9 @@ const Navbar = () => {
               <Link
                 href="/"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive('/')
-                    ? 'text-[var(--accent-1)] bg-[var(--accent-5)]/70'
-                    : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
+                  isActive("/")
+                    ? "text-[var(--accent-1)] bg-[var(--accent-5)]/70"
+                    : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
                 }`}
               >
                 Home
@@ -58,27 +58,21 @@ const Navbar = () => {
               <Link
                 href="/about"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive('/about')
-                    ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
-                    : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
+                  isActive("/about")
+                    ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
+                    : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
                 }`}
               >
                 About
               </Link>
-              <Dropdown
-                trigger="Organizations"
-                items={organizationLinks}
-              />
-              <Dropdown
-                trigger="From the Church"
-                items={fromChurchLinks}
-              />
+              <Dropdown trigger="Organizations" items={organizationLinks} />
+              <Dropdown trigger="From the Church" items={fromChurchLinks} />
               <Link
                 href="/contact"
                 className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive('/contact')
-                    ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
-                    : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
+                  isActive("/contact")
+                    ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
+                    : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
                 }`}
               >
                 Contact
@@ -96,7 +90,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[var(--border)]">
@@ -105,9 +99,9 @@ const Navbar = () => {
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive('/')
-                  ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
-                  : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
+                isActive("/")
+                  ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
+                  : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
               }`}
             >
               Home
@@ -116,9 +110,9 @@ const Navbar = () => {
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive('/about')
-                  ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
-                  : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
+                isActive("/about")
+                  ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
+                  : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
               }`}
             >
               About
@@ -157,9 +151,9 @@ const Navbar = () => {
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive('/contact')
-                  ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
-                  : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
+                isActive("/contact")
+                  ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
+                  : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
               }`}
             >
               Contact
@@ -168,7 +162,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
