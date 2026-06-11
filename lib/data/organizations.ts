@@ -11,10 +11,6 @@ export interface Activity {
 
 export interface Organization {
   slug: string;
-  name: string;
-  tagline: string;
-  description: string;
-  heroImage: string;
   aboutTitle: string;
   aboutContent: string[];
   activitiesTitle: string;
@@ -31,11 +27,6 @@ export interface Organization {
 export const organizations: Record<string, Organization> = {
   "sunday-school": {
     slug: "sunday-school",
-    name: "Sunday School",
-    tagline: "Nurturing young hearts for Jesus",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Ullamcorper vestibulum adipiscing commodo condimentum auctor cras ut porttitor non. In nec neque iaculis malesuada. Imperdiet est facilisis fermentum dignissim vitae nisi consectetur. Accumsan semper volutpat blandit egestas. Neque curabitur et orci pellentesque ante nec facilisi.",
-    heroImage: "/organizations/sunday-school/hero.jpg",
     aboutTitle: "About Sunday School",
     aboutContent: [
       "Our Sunday School ministry is dedicated to teaching children the foundational truths of God's Word. Through interactive lessons, songs, and activities, we help young minds grow in faith and understanding.",
@@ -78,10 +69,6 @@ export const organizations: Record<string, Organization> = {
   },
   emteens: {
     slug: "emteens",
-    name: "EMTeens",
-    tagline: "Growing in faith together",
-    description: "A community for teenagers to grow in their walk with Christ",
-    heroImage: "/organizations/emteens/hero.jpg",
     aboutTitle: "About EMTeens",
     aboutContent: [
       "EMTeens is our youth ministry for teenagers aged 13-18. We provide a safe space for young people to ask questions, explore their faith, and build lasting friendships.",
@@ -121,10 +108,6 @@ export const organizations: Record<string, Organization> = {
   },
   myf: {
     slug: "myf",
-    name: "MYF",
-    tagline: "Methodist Youth Fellowship",
-    description: "Empowering young people to lead and serve",
-    heroImage: "/organizations/myf/hero.jpg",
     aboutTitle: "About MYF",
     aboutContent: [
       "The Methodist Youth Fellowship (MYF) is designed for young adults who want to deepen their faith and develop leadership skills within the church community.",
@@ -167,10 +150,6 @@ export const organizations: Record<string, Organization> = {
   },
   wscs: {
     slug: "wscs",
-    name: "WSCS",
-    tagline: "Women's Service and Christian Fellowship",
-    description: "Empowering women through faith, fellowship, and service",
-    heroImage: "/organizations/wscs/hero.jpg",
     aboutTitle: "About WSCS",
     aboutContent: [
       "The Women's Service and Christian Fellowship (WSCS) is a ministry dedicated to the spiritual growth and fellowship of women in our church community.",
@@ -207,10 +186,6 @@ export const organizations: Record<string, Organization> = {
   },
   "methodist-men": {
     slug: "methodist-men",
-    name: "Methodist Men",
-    tagline: "Serving God and community",
-    description: "Men united in faith and fellowship",
-    heroImage: "/organizations/methodist-men/hero.jpg",
     aboutTitle: "About Methodist Men",
     aboutContent: [
       "The Methodist Men fellowship brings together men of all ages to grow in faith, build strong friendships, and serve our church and community.",
@@ -250,10 +225,6 @@ export const organizations: Record<string, Organization> = {
   },
   choir: {
     slug: "choir",
-    name: "EMTC Choir",
-    tagline: "Praise the Lord with song",
-    description: "Leading our congregation in worship through music",
-    heroImage: "/organizations/choir/hero.jpg",
     aboutTitle: "About EMTC Choir",
     aboutContent: [
       "The EMTC Choir leads our congregation in praise and worship through beautiful music. We are blessed with talented singers who use their gifts to glorify God.",

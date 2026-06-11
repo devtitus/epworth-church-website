@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { organizations } from "@/lib/data/organizations";
+import { organizationHeroSections } from "@/data/heroSection";
 import OrgHero from "@/components/sections/organizations/OrgHero";
 import OrgAbout from "@/components/sections/organizations/OrgAbout";
 import OrgActivities from "@/components/sections/organizations/OrgActivities";
@@ -22,14 +23,15 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const org = organizations[slug];
+  const hero = organizationHeroSections[slug];
 
-  if (!org) {
+  if (!org || !hero) {
     return { title: "Not Found" };
   }
 
   return {
-    title: `${org.name} | Epworth Methodist Tamil Church`,
-    description: org.description,
+    title: `${hero.name} | Epworth Methodist Tamil Church`,
+    description: hero.description,
   };
 }
 
@@ -43,12 +45,7 @@ export default async function OrganizationPage({ params }: PageProps) {
 
   return (
     <main>
-      <OrgHero
-        name={org.name}
-        tagline={org.tagline}
-        description={org.description}
-        heroImage={org.heroImage}
-      />
+      <OrgHero slug={slug} />
 
       <OrgAbout title={org.aboutTitle} content={org.aboutContent} />
 

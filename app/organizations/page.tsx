@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { organizationList } from "@/lib/data/organizations";
+import { organizationHeroSections } from "@/data/heroSection";
 
 export const metadata: Metadata = {
   title: "Organizations | Epworth Methodist Tamil Church",
@@ -19,21 +20,24 @@ export default function OrganizationsPage() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {organizationList.map((org) => (
-            <Link
-              key={org.slug}
-              href={`/organizations/${org.slug}`}
-              className="rounded-2xl border border-[var(--border-highlight)] p-6 hover:shadow-md transition-shadow"
-              style={{ background: "var(--card-shade)" }}
-            >
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
-                {org.name}
-              </h2>
-              <p className="text-[var(--color-secondary-text)] text-sm">
-                {org.tagline}
-              </p>
-            </Link>
-          ))}
+          {organizationList.map((org) => {
+            const hero = organizationHeroSections[org.slug];
+            return (
+              <Link
+                key={org.slug}
+                href={`/organizations/${org.slug}`}
+                className="rounded-2xl border border-[var(--border-highlight)] p-6 hover:shadow-md transition-shadow"
+                style={{ background: "var(--card-shade)" }}
+              >
+                <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
+                  {hero?.name}
+                </h2>
+                <p className="text-[var(--color-secondary-text)] text-sm">
+                  {hero?.tagline}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </main>

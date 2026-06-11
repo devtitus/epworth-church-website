@@ -2,15 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { ArrowUpRight } from "lucide-react";
+import { organizationHeroSection, organizationHeroSections } from "@/data/heroSection";
 
 interface OrgHeroProps {
-  name: string;
-  tagline: string;
-  description: string;
-  heroImage: string;
+  slug: string;
 }
 
-const OrgHero = ({ name, tagline, description, heroImage }: OrgHeroProps) => {
+const OrgHero = ({ slug }: OrgHeroProps) => {
+  const heroData = organizationHeroSections[slug];
+
+  if (!heroData) {
+    return null;
+  }
+
+  const { name, tagline, description, heroImage } = heroData;
   const nameParts = name.split(" ");
   const lastName = nameParts.pop() || "";
   const firstName = nameParts.join(" ");
@@ -18,14 +23,14 @@ const OrgHero = ({ name, tagline, description, heroImage }: OrgHeroProps) => {
   return (
     <section
       className="relative w-full bg-[var(--background)] py-20 lg:py-24"
-      aria-labelledby="org-hero-heading"
+      aria-label={organizationHeroSection.ariaLabel}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Column - Content */}
           <div className="order-2 lg:order-1">
             <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-4">
-              {tagline}
+              {tagline || organizationHeroSection.taglineFallback}
             </span>
 
             <h1
@@ -40,9 +45,9 @@ const OrgHero = ({ name, tagline, description, heroImage }: OrgHeroProps) => {
               {description}
             </p>
 
-            <Link href="#org-about">
+            <Link href={organizationHeroSection.cta.href}>
               <Button variant="primary" className="text-base font-medium">
-                Know More
+                {organizationHeroSection.cta.label}
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Button>
             </Link>
@@ -57,7 +62,7 @@ const OrgHero = ({ name, tagline, description, heroImage }: OrgHeroProps) => {
               <div className="relative aspect-[4/3] rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
                 <Image
                   src={heroImage}
-                  alt={`${name} - Organization hero image`}
+                  alt={`${name} - ${organizationHeroSection.image.altSuffix}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
