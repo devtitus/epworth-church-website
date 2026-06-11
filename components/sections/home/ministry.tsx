@@ -1,6 +1,6 @@
 "use client";
 
-import MinistryCard from "@/components/home/MinistryCard";
+import { MinistryCard } from "@/components/sections/home/index";
 
 const ministries = [
   {

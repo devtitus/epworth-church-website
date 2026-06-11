@@ -1,17 +1,18 @@
 import Image from "next/image";
-import { NewsMarquee } from "./NewsMarquee";
+import { NewsMarquee } from "@/components/sections/home/NewsMarquee";
+import { heroSection } from "@/data/heroSection";
 
 const Hero = () => {
   return (
     <section
       className="relative w-full h-screen min-h-[700px] overflow-hidden"
-      aria-label="Welcome to Epworth Methodist Tamil Church"
+      aria-label={heroSection.ariaLabel}
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/home/1.jpg"
-          alt="Epworth Methodist Tamil Church - Our church building and congregation"
+          src={heroSection.image.src}
+          alt={heroSection.image.alt}
           fill
           className="object-cover"
           priority
@@ -42,28 +43,26 @@ const Hero = () => {
                   aria-hidden="true"
                 />
                 <span className="text-white/90 text-sm font-medium">
-                  Est. 1874 • A Heritage of Faith
+                  {heroSection.badge.text}
                 </span>
               </div>
 
               {/* Title */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold text-white leading-[1.15] mb-5">
-                Epworth Methodist{" "}
+                {heroSection.title.prefix}{" "}
                 <span className="block mt-2">
                   <span className="inline-block">
-                    <span className="text-[var(--accent-5)]">Tamil </span>Church
+                    <span className="text-[var(--accent-5)]">
+                      {heroSection.title.highlighted}
+                    </span>
+                    {heroSection.title.suffix}
                   </span>
                 </span>
               </h1>
 
               {/* Description */}
               <p className="text-base md:text-base text-white/80 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                Find your place in our story. At Epworth MTC, faith, community,
-                and hope converge. We are a vibrant family dedicated to
-                following Christ and serving our city with love. We invite you
-                to join our Sunday worship and discover a community where you
-                are known, loved, and encouraged to grow. You aren’t just a
-                visitor here—you’re family.
+                {heroSection.description}
               </p>
             </header>
 
