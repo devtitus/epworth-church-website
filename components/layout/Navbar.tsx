@@ -5,21 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Dropdown } from "@/components/ui/Dropdown";
-
-// Organization items shown in dropdown
-const organizationLinks = [
-  { name: "Sunday School", href: "/organizations/sunday-school" },
-  { name: "EMTeens", href: "/organizations/emteens" },
-  { name: "MYF", href: "/organizations/myf" },
-  { name: "WSCS", href: "/organizations/wscs" },
-  { name: "Methodist Men", href: "/organizations/methodist-men" },
-];
-
-// From the Church items shown in dropdown
-const fromChurchLinks = [
-  { name: "Blogs", href: "/blogs" },
-  { name: "Announcements", href: "/announcements" },
-];
+import { navbarData } from "@/data/layout/navbar";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -35,48 +21,33 @@ const Navbar = () => {
             <div className="shrink-0 flex items-center">
               <Link href="/">
                 <Image
-                  src="/logo/Epworth_logo.svg"
-                  alt="Epworth Logo"
-                  width={190}
-                  height={48}
+                  src={navbarData.logo.src}
+                  alt={navbarData.logo.alt}
+                  width={navbarData.logo.width}
+                  height={navbarData.logo.height}
                 />
               </Link>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-2">
-              <Link
-                href="/"
-                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive("/")
-                    ? "text-[var(--accent-1)] bg-[var(--accent-5)]/70"
-                    : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-                }`}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive("/about")
-                    ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
-                    : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-                }`}
-              >
-                About
-              </Link>
-              <Dropdown trigger="Organizations" items={organizationLinks} />
-              <Dropdown trigger="From the Church" items={fromChurchLinks} />
-              <Link
-                href="/contact"
-                className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
-                  isActive("/contact")
-                    ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
-                    : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-                }`}
-              >
-                Contact
-              </Link>
+              {navbarData.navLinks.map((link) =>
+                link.type === "dropdown" ? (
+                  <Dropdown key={link.label} trigger={link.label} items={[...link.items]} />
+                ) : (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
+                      isActive(link.href)
+                        ? "text-[var(--accent-1)] bg-[var(--accent-5)]/70"
+                        : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
           <div className="md:hidden">
@@ -95,69 +66,40 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[var(--border)]">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-[var(--accent-3)]">
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive("/")
-                  ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
-                  : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive("/about")
-                  ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
-                  : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-              }`}
-            >
-              About
-            </Link>
-            <div className="pt-2 pb-1">
-              <span className="block px-3 py-2 text-sm font-semibold text-[var(--foreground)]">
-                Organizations
-              </span>
-            </div>
-            {organizationLinks.map((org) => (
-              <Link
-                key={org.name}
-                href={org.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-              >
-                {org.name}
-              </Link>
-            ))}
-            <div className="pt-2 pb-1">
-              <span className="block px-3 py-2 text-sm font-semibold text-[var(--foreground)]">
-                From the Church
-              </span>
-            </div>
-            {fromChurchLinks.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive("/contact")
-                  ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
-                  : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
-              }`}
-            >
-              Contact
-            </Link>
+            {navbarData.navLinks.map((link) =>
+              link.type === "dropdown" ? (
+                <div key={link.label}>
+                  <div className="pt-2 pb-1">
+                    <span className="block px-3 py-2 text-sm font-semibold text-[var(--foreground)]">
+                      {link.label}
+                    </span>
+                  </div>
+                  {link.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-6 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    isActive(link.href)
+                      ? "text-[var(--color-highlight)] bg-[var(--accent-5)]"
+                      : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
         </div>
       )}
