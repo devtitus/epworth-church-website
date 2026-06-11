@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Heart } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { homeContactSection } from "@/data/contactSections";
 
 interface ContactSectionProps {
   tagline?: string;
@@ -13,11 +14,11 @@ interface ContactSectionProps {
 }
 
 const ContactSection = ({
-  tagline = "Let's Connect",
-  title = "We'd Love to Hear From You",
-  description = "Whether you have a question about our church, events, or just want to say hello — we're here to help.",
-  buttonText = "Get In Touch",
-  buttonHref = "/contact",
+  tagline = homeContactSection.tagline,
+  title = homeContactSection.title,
+  description = homeContactSection.description,
+  buttonText = homeContactSection.buttonText,
+  buttonHref = homeContactSection.buttonHref,
 }: ContactSectionProps) => {
   return (
     <section
@@ -75,20 +76,16 @@ const ContactSection = ({
             <div className="flex flex-wrap items-end justify-between gap-6">
               {/* Trust badges */}
               <div className="flex flex-wrap gap-4">
-                <div 
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm"
-                  style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.5) 0%, rgba(211, 213, 215, 0.2) 100%)' }}
-                >
-                  <div className="w-2 h-2 rounded-full bg-green-600" />
-                  <span className="text-[var(--color-secondary-text)]">We respond within 24 hours</span>
-                </div>
-                <div 
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm"
-                  style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.5) 0%, rgba(211, 213, 215, 0.2) 100%)' }}
-                >
-                  <div className="w-2 h-2 rounded-full bg-[var(--color-highlight)]" />
-                  <span className="text-[var(--color-secondary-text)]">All inquiries welcome</span>
-                </div>
+                {homeContactSection.badges.map((badge, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm"
+                    style={{ background: 'linear-gradient(0deg, rgba(211, 213, 215, 0.5) 0%, rgba(211, 213, 215, 0.2) 100%)' }}
+                  >
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: badge.color }} />
+                    <span className="text-[var(--color-secondary-text)]">{badge.text}</span>
+                  </div>
+                ))}
               </div>
 
               {/* CTA Button - on the right */}

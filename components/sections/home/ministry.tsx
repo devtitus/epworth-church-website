@@ -1,53 +1,11 @@
 "use client";
 
 import { MinistryCard } from "@/components/sections/home/index";
-
-const ministries = [
-  {
-    id: 1,
-    title: "Sunday School",
-    description: "Leading our congregation in praise and worship",
-    image: "/home/1.jpg",
-    href: "/ministries/worship",
-  },
-  {
-    id: 2,
-    title: "EMTeens",
-    description: "Discipling the next generation of believers",
-    image: "/home/1.jpg",
-    href: "/ministries/youth",
-  },
-  {
-    id: 3,
-    title: "MYF",
-    description: "Nurturing young hearts for Jesus",
-    image: "/home/1.jpg",
-    href: "/ministries/children",
-  },
-  {
-    id: 4,
-    title: "WSCS",
-    description: "Interceding for our church and community",
-    image: "/home/1.jpg",
-    href: "/ministries/prayer",
-  },
-  {
-    id: 5,
-    title: "Methodist Men",
-    description: "Supporting those in need within our community",
-    image: "/home/1.jpg",
-    href: "/ministries/care",
-  },
-  {
-    id: 6,
-    title: "EMTC Choir",
-    description: "Sharing God's love beyond our walls",
-    image: "/home/1.jpg",
-    href: "/ministries/outreach",
-  },
-];
+import { ministrySection } from "@/data/ministrySection";
 
 const Ministry = () => {
+  const { sectionLabel, title, description, ministries } = ministrySection;
+
   return (
     <section
       className="relative w-full py-16 lg:py-24 bg-[var(--background)]"
@@ -58,7 +16,7 @@ const Ministry = () => {
         <header className="text-center mb-12 lg:mb-16">
           {/* Section Label */}
           <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
-            Our Ministries
+            {sectionLabel}
           </span>
 
           {/* Title */}
@@ -66,12 +24,11 @@ const Ministry = () => {
             id="ministry-heading"
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-2"
           >
-            Serve <span className="text-[var(--accent-2)]">With Us</span>
+            {title.prefix} <span className="text-[var(--accent-2)]">{title.highlighted}</span>
           </h2>
 
           <p className="text-[var(--color-secondary-text)] text-base max-w-2xl mx-auto">
-            Find your place to serve and grow in faith with our various ministry
-            teams
+            {description}
           </p>
         </header>
 

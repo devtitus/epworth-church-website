@@ -1,8 +1,12 @@
 "use client";
 
 import { MapPin, Clock, Calendar } from "lucide-react";
+import { findUsSection } from "@/data/findUsSection";
 
 const FindUs = () => {
+  const { sectionLabel, title, description, address, services, map, directions } =
+    findUsSection;
+
   return (
     <section
       className="relative w-full py-16 lg:py-24 bg-[var(--background)]"
@@ -16,7 +20,7 @@ const FindUs = () => {
             <header className="mb-6">
               {/* Section Label */}
               <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
-                Visit Us
+                {sectionLabel}
               </span>
 
               {/* Title */}
@@ -24,11 +28,11 @@ const FindUs = () => {
                 id="find-us-heading"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-2"
               >
-                Find <span className="text-[var(--accent-2)]">Us</span>
+                {title.prefix} <span className="text-[var(--accent-2)]">{title.highlighted}</span>
               </h2>
 
               <p className="text-[var(--color-secondary-text)] text-base">
-                Join us for worship and experience the warmth of our community
+                {description}
               </p>
             </header>
 
@@ -40,7 +44,6 @@ const FindUs = () => {
                   "linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)",
               }}
             >
-              {/* Inner card with glass effect */}
               <div className="p-4">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[var(--color-highlight)] flex items-center justify-center flex-shrink-0">
@@ -48,15 +51,15 @@ const FindUs = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-[var(--foreground)] font-bold text-lg mb-1">
-                      Epworth Methodist Tamil Church
+                      {address.name}
                     </h3>
                     <p className="text-[var(--color-secondary-text)] text-sm">
-                      No. 25, Museum Road
+                      {address.street}
                       <br />
-                      Bengaluru, Karnataka 560001
+                      {address.cityState}
                     </p>
                     <div className="mt-2 text-[var(--color-highlight)] text-sm font-medium">
-                      India
+                      {address.country}
                     </div>
                   </div>
                 </div>
@@ -65,73 +68,75 @@ const FindUs = () => {
 
             {/* Service Cards - In a row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Sunday Service Card with Glassmorphism */}
-              <div
-                className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs"
-                style={{
-                  background:
-                    "linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)",
-                }}
-              >
-                {/* Inner card with glass effect */}
-                <div className="p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[var(--color-highlight)]/10 flex items-center justify-center flex-shrink-0">
-                      <Calendar className="w-4 h-4 text-[var(--color-highlight)]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-[var(--foreground)] font-semibold text-sm mb-1">
-                        Sunday Service
-                      </h3>
-                      <div className="text-[var(--color-secondary-text)] text-sm">
-                        <span className="font-medium text-[var(--foreground)]">
-                          8:30 AM
-                        </span>
-                        {" - "}
-                        <span className="text-[var(--foreground)]">
-                          10:00 AM
-                        </span>
-                      </div>
-                      <div className="text-xs text-[var(--color-secondary-text)] mt-1">
-                        Every Sunday
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {services.map((service) => {
+                const IconComponent =
+                  service.icon === "Calendar" ? Calendar : Clock;
 
-              {/* Dawn Service Card with Glassmorphism */}
-              <div
-                className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs"
-                style={{
-                  background:
-                    "linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)",
-                }}
-              >
-                {/* Inner card with glass effect */}
-                <div className="p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[var(--accent-2)] flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-4 h-4 text-[var(--color-highlight)]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-[var(--foreground)] font-semibold text-sm mb-1">
-                        Dawn Service
-                      </h3>
-                      <div className="text-[var(--color-secondary-text)] text-sm">
-                        <span className="font-medium text-[var(--foreground)]">
-                          1st of Every Month
-                        </span>
-                      </div>
-                      <div className="text-[var(--color-secondary-text)] text-sm">
-                        <span className="font-medium text-[var(--foreground)]">
-                          5:30 AM Onwards
-                        </span>
+                return (
+                  <div
+                    key={service.id}
+                    className="rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs"
+                    style={{
+                      background:
+                        "linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)",
+                    }}
+                  >
+                    <div className="p-4">
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                            service.id === "sunday"
+                              ? "bg-[var(--color-highlight)]/10"
+                              : "bg-[var(--accent-2)]"
+                          }`}
+                        >
+                          <IconComponent
+                            className={`w-4 h-4 ${
+                              service.id === "sunday"
+                                ? "text-[var(--color-highlight)]"
+                                : "text-[var(--color-highlight)]"
+                            }`}
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-[var(--foreground)] font-semibold text-sm mb-1">
+                            {service.title}
+                          </h3>
+                          {"timeRange" in service ? (
+                            <>
+                              <div className="text-[var(--color-secondary-text)] text-sm">
+                                <span className="font-medium text-[var(--foreground)]">
+                                  {service.timeRange.start}
+                                </span>
+                                {" - "}
+                                <span className="text-[var(--foreground)]">
+                                  {service.timeRange.end}
+                                </span>
+                              </div>
+                              <div className="text-xs text-[var(--color-secondary-text)] mt-1">
+                                {service.frequency}
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              {service.details.map((detail, idx) => (
+                                <div
+                                  key={idx}
+                                  className="text-[var(--color-secondary-text)] text-sm"
+                                >
+                                  <span className="font-medium text-[var(--foreground)]">
+                                    {detail}
+                                  </span>
+                                </div>
+                              ))}
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
 
@@ -142,18 +147,17 @@ const FindUs = () => {
               className="rounded-2xl p-4 border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs"
               style={{ background: "var(--card-shade)" }}
             >
-              {/* Inner card with glass effect */}
               <div className="rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
                 <div className="h-[300px] lg:h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.541663048926!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0x8c4b8e9e9e9e9e9e!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
+                    src={map.iframeSrc}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Church Location Map"
+                    title={map.title}
                     className="w-full h-full"
                   />
                 </div>
@@ -168,15 +172,14 @@ const FindUs = () => {
                   "linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)",
               }}
             >
-              {/* Inner card with glass effect */}
-              <div className="p-4 ">
+              <div className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="text-[var(--foreground)] font-semibold">
-                      Get Directions
+                      {directions.heading}
                     </h4>
                     <p className="text-[var(--color-secondary-text)] text-sm">
-                      Navigate to our church
+                      {directions.description}
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[var(--color-highlight)] flex items-center justify-center">

@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { greetingSection } from "@/data/greetingSection";
 
 const Greetings = () => {
+  const { sectionLabel, title, paragraphs, pastor } = greetingSection;
+
   return (
     <section
       className="relative w-full py-20 lg:py-24 bg-[var(--background)]"
@@ -13,7 +16,7 @@ const Greetings = () => {
             <header>
               {/* Section Label */}
               <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-4">
-                From Our Pastor
+                {sectionLabel}
               </span>
 
               {/* Title */}
@@ -21,58 +24,43 @@ const Greetings = () => {
                 id="greetings-heading"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
               >
-                A Message of{" "}
-                <span className="text-[var(--accent-2)]">Welcome</span>
+                {title.prefix}{" "}
+                <span className="text-[var(--accent-2)]">{title.highlighted}</span>
               </h2>
             </header>
 
             {/* Greeting Message */}
             <div className="mb-8">
-              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
-                Dear Brothers and Sisters in Christ,
-              </p>
-              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
-                I am delighted to welcome you to our church website! Our church
-                is a vibrant community of God-fearing believers, passionate
-                about growing in our relationship with the Lord and sharing His
-                love with others. We have various organizations and ministries
-                catering to different age groups, from children to seniors,
-                designed to nurture and equip individuals to fulfill their
-                God-given potential.
-              </p>
-              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-4">
-                Whether you are seeking a spiritual home, looking for
-                fellowship, or simply exploring the Christian faith, we invite
-                you to join us on this journey of faith!
-              </p>
-              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-2">
-                May you experience the love, joy, and peace of our Lord Jesus
-                Christ as you navigate our website and get to know our church
-                family.
-              </p>
-              <p className="text-base text-[var(--color-secondary-text)] leading-relaxed">
-                With blessings and warm regards,
-              </p>
+              {paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={`text-base text-[var(--color-secondary-text)] leading-relaxed ${
+                    index < paragraphs.length - 1 ? "mb-4" : ""
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
             {/* Pastor Info */}
             <div className="flex items-center gap-4 pt-6 border-t border-[var(--color-highlight)]/10">
               <div className="w-14 h-14 rounded-full bg-[var(--accent-3)] border-2 border-[var(--border-highlight)] overflow-hidden flex-shrink-0">
                 <Image
-                  src="/home/pastors-image.png"
-                  alt="Rev. Dr. Samuel Matthew"
-                  width={56}
-                  height={56}
+                  src={pastor.thumbnailImage.src}
+                  alt={pastor.thumbnailImage.alt}
+                  width={pastor.thumbnailImage.width}
+                  height={pastor.thumbnailImage.height}
                   className="w-full h-full object-cover"
                   unoptimized
                 />
               </div>
               <div>
                 <p className="text-base font-bold text-[var(--foreground)]">
-                  Rev. Alvin Raj
+                  {pastor.name}
                 </p>
                 <p className="text-sm text-[var(--color-highlight)]">
-                  Senior Pastor
+                  {pastor.title}
                 </p>
               </div>
             </div>
@@ -87,8 +75,8 @@ const Greetings = () => {
               {/* Image Container */}
               <div className="relative aspect-[1/1] rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
                 <Image
-                  src="/home/pastors-image.png"
-                  alt="Rev. Alvin Raj - Senior Pastor"
+                  src={pastor.heroImage.src}
+                  alt={pastor.heroImage.alt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -107,8 +95,8 @@ const Greetings = () => {
                     borderColor: "rgba(5, 5, 23, 0.1)",
                   }}
                 >
-                  <p className="text-white font-semibold">Rev. Alvin Raj</p>
-                  <p className="text-white/70 text-sm">Senior Pastor</p>
+                  <p className="text-white font-semibold">{pastor.name}</p>
+                  <p className="text-white/70 text-sm">{pastor.title}</p>
                 </div>
               </div>
             </div>
