@@ -7,7 +7,10 @@ const OurHistory = () => {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1">
-            <div className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-md" style={{ background: "var(--card-shade)" }}>
+            <div
+              className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-md"
+              style={{ background: "var(--card-shade)" }}
+            >
               <div
                 className="relative w-full aspect-[4/3] max-h-[min(52vh,520px)] rounded-2xl border border-[var(--border-highlight)] bg-[var(--media-placeholder)]"
                 role="presentation"
@@ -24,8 +27,7 @@ const OurHistory = () => {
               id="our-history-heading"
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-8"
             >
-              Our{" "}
-              <span className="text-[var(--accent-2)]">History</span>
+              Our <span className="text-[var(--accent-2)]">History</span>
             </h2>
 
             <div className="space-y-4 text-base text-[var(--color-secondary-text)] leading-relaxed">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { sortedBlogs } from "@/lib/data/blogs";
-import { BlogList } from "@/app/sections/blogs";
+import { BlogList } from "@/components/sections/blogs";
 
 export const metadata: Metadata = {
   title: "Blogs | Epworth Methodist Tamil Church",

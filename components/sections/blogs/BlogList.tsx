@@ -34,7 +34,7 @@ const BlogList = ({ blogs }: BlogListProps) => {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentBlogs = filteredBlogs.slice(
     startIndex,
-    startIndex + ITEMS_PER_PAGE
+    startIndex + ITEMS_PER_PAGE,
   );
 
   const handleTagChange = (tag: string) => {
@@ -65,7 +65,8 @@ const BlogList = ({ blogs }: BlogListProps) => {
             id="blog-list-heading"
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight"
           >
-            Insights & <span className="text-[var(--accent-2)]">Inspirations</span>
+            Insights &{" "}
+            <span className="text-[var(--accent-2)]">Inspirations</span>
           </h2>
         </header>
 
@@ -94,34 +95,40 @@ const BlogList = ({ blogs }: BlogListProps) => {
         {/* Blogs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentBlogs.map((blog) => (
-            <Link href={`/blogs/${blog.id}`} key={blog.id} className="group flex h-full">
+            <Link
+              href={`/blogs/${blog.id}`}
+              key={blog.id}
+              className="group flex h-full"
+            >
               <article
                 className="relative flex flex-col w-full rounded-2xl border border-[var(--border-highlight)] shadow-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 style={{ background: "var(--card-shade)" }}
               >
                 {/* Image Section */}
                 <div className="relative h-48 w-full overflow-hidden border-b border-[var(--border-highlight)]">
-                    <Image
-                      src={blog.imageUrl || "/home/1.jpg"}
-                      alt={blog.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                  <Image
+                    src={blog.imageUrl || "/home/1.jpg"}
+                    alt={blog.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
 
                 <div className="flex flex-col flex-grow p-6 lg:p-8 backdrop-blur-sm">
                   {/* Meta (Date + Primary Tag) */}
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-4 text-sm text-[var(--color-secondary-text)]">
                     <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-[var(--color-highlight)]" />
-                        <time dateTime={blog.date}>{formatDate(blog.date)}</time>
+                      <Calendar className="w-4 h-4 text-[var(--color-highlight)]" />
+                      <time dateTime={blog.date}>{formatDate(blog.date)}</time>
                     </div>
                     {blog.tags.length > 0 && (
-                        <div className="flex items-center gap-1">
-                            <Tag className="w-3 h-3 text-[var(--color-highlight)]" />
-                            <span className="font-medium text-[var(--accent-1)] text-xs uppercase tracking-wider">{blog.tags[0]}</span>
-                        </div>
+                      <div className="flex items-center gap-1">
+                        <Tag className="w-3 h-3 text-[var(--color-highlight)]" />
+                        <span className="font-medium text-[var(--accent-1)] text-xs uppercase tracking-wider">
+                          {blog.tags[0]}
+                        </span>
+                      </div>
                     )}
                   </div>
 
@@ -165,45 +172,45 @@ const BlogList = ({ blogs }: BlogListProps) => {
 
         {/* Pagination Controls */}
         {totalPages > 1 && (
-           <div className="flex items-center justify-center gap-4 mt-12">
-           <button
-             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-             disabled={currentPage === 1}
-             className="p-2 rounded-full border border-[var(--border-highlight)] bg-[var(--card-shade)] text-[var(--foreground)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--accent-3)]/50 transition-colors"
-             aria-label="Previous page"
-           >
-             <ChevronLeft className="w-5 h-5" />
-           </button>
+          <div className="flex items-center justify-center gap-4 mt-12">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="p-2 rounded-full border border-[var(--border-highlight)] bg-[var(--card-shade)] text-[var(--foreground)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--accent-3)]/50 transition-colors"
+              aria-label="Previous page"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
 
-           <div className="flex items-center gap-2">
-             {Array.from({ length: totalPages }).map((_, i) => {
-               const page = i + 1;
-               const isActive = currentPage === page;
-               return (
-                 <button
-                   key={page}
-                   onClick={() => setCurrentPage(page)}
-                   className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
-                     isActive
-                       ? "bg-[var(--accent-5)] text-[var(--accent-1)] border border-[var(--accent-5)]"
-                       : "border border-[var(--border-highlight)] bg-[var(--card-shade)] text-[var(--color-secondary-text)] hover:bg-[var(--accent-3)]/50 hover:text-[var(--foreground)]"
-                   }`}
-                 >
-                   {page}
-                 </button>
-               );
-             })}
-           </div>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => {
+                const page = i + 1;
+                const isActive = currentPage === page;
+                return (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
+                      isActive
+                        ? "bg-[var(--accent-5)] text-[var(--accent-1)] border border-[var(--accent-5)]"
+                        : "border border-[var(--border-highlight)] bg-[var(--card-shade)] text-[var(--color-secondary-text)] hover:bg-[var(--accent-3)]/50 hover:text-[var(--foreground)]"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
+            </div>
 
-           <button
-             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-             disabled={currentPage === totalPages}
-             className="p-2 rounded-full border border-[var(--border-highlight)] bg-[var(--card-shade)] text-[var(--foreground)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--accent-3)]/50 transition-colors"
-             aria-label="Next page"
-           >
-             <ChevronRight className="w-5 h-5" />
-           </button>
-         </div>
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="p-2 rounded-full border border-[var(--border-highlight)] bg-[var(--card-shade)] text-[var(--foreground)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--accent-3)]/50 transition-colors"
+              aria-label="Next page"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         )}
       </div>
     </section>

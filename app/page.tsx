@@ -1,4 +1,10 @@
-import { Hero, Greetings, Find, About, Ministry } from "@/app/sections/home/index";
+import {
+  Hero,
+  Greetings,
+  Find,
+  About,
+  Ministry,
+} from "@/components/sections/home/index";
 import { Contact } from "@/components/layout/index";
 
 export default function Home() {

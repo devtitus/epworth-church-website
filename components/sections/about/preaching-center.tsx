@@ -15,8 +15,7 @@ const PreachingCenter = () => {
               id="preaching-center-heading"
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
             >
-              Preaching{" "}
-              <span className="text-[var(--accent-2)]">Center</span>
+              Preaching <span className="text-[var(--accent-2)]">Center</span>
             </h2>
 
             <p className="text-base text-[var(--color-secondary-text)] leading-relaxed mb-10 max-w-xl">

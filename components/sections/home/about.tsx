@@ -10,11 +10,12 @@ const About = () => {
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
           {/* Left Column - Church Image with Glass Effect Card */}
           <div className="order-1 lg:order-1">
-            <div className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-lg" style={{ background: 'var(--card-shade)' }}>
-
+            <div
+              className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-lg"
+              style={{ background: "var(--card-shade)" }}
+            >
               {/* Image Container */}
               <div className="relative aspect-[1/1] rounded-2xl overflow-hidden border border-[var(--border-highlight)]">
                 <Image
@@ -29,9 +30,13 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                 {/* Stats overlay */}
-                <div 
+                <div
                   className="absolute bottom-0 left-0 right-0 p-5 border-t"
-                  style={{ background: 'rgba(211, 213, 215, 0.3)', backdropFilter: 'blur(12px)', borderColor: 'rgba(5, 5, 23, 0.1)' }}
+                  style={{
+                    background: "rgba(211, 213, 215, 0.3)",
+                    backdropFilter: "blur(12px)",
+                    borderColor: "rgba(5, 5, 23, 0.1)",
+                  }}
                 >
                   <div className="flex justify-center gap-6">
                     <div className="text-center">

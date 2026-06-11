@@ -5,7 +5,7 @@ import {
   AboutGreetings,
   PreachingCenter,
   InCharge,
-} from "@/app/sections/about";
+} from "@/components/sections/about";
 import { Contact } from "@/components/layout/index";
 
 export const metadata: Metadata = {

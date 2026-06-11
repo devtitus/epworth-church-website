@@ -19,9 +19,7 @@ const AboutGreetings = () => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
             >
               Warmest greetings in the name of our{" "}
-              <span className="text-[var(--accent-2)]">
-                Lord Jesus Christ!
-              </span>
+              <span className="text-[var(--accent-2)]">Lord Jesus Christ!</span>
             </h2>
 
             <div className="space-y-4 text-base text-[var(--color-secondary-text)] leading-relaxed mb-8">

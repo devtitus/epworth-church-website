@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { sortedAnnouncements } from "@/lib/data/announcements";
-import AnnList from "@/app/sections/announcements/AnnList";
+import AnnList from "@/components/sections/announcements/AnnList";
 
 export const metadata: Metadata = {
   title: "Announcements | Epworth Methodist Tamil Church",

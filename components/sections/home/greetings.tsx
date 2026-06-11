@@ -80,8 +80,10 @@ const Greetings = () => {
 
           {/* Right Column - Pastor Image with Glass Effect */}
           <div className="order-1 lg:order-2">
-            <div className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-md" style={{ background: 'var(--card-shade)' }}>
-
+            <div
+              className="relative p-4 rounded-3xl border border-[var(--border-highlight)] backdrop-blur-md"
+              style={{ background: "var(--card-shade)" }}
+            >
               {/* Image Container */}
               <div className="relative aspect-[1/1] rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
                 <Image
@@ -97,9 +99,13 @@ const Greetings = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                 {/* Glass info overlay */}
-                <div 
+                <div
                   className="absolute bottom-0 left-0 right-0 p-6 border-t"
-                  style={{ background: 'rgba(211, 213, 215, 0.3)', backdropFilter: 'blur(12px)', borderColor: 'rgba(5, 5, 23, 0.1)' }}
+                  style={{
+                    background: "rgba(211, 213, 215, 0.3)",
+                    backdropFilter: "blur(12px)",
+                    borderColor: "rgba(5, 5, 23, 0.1)",
+                  }}
                 >
                   <p className="text-white font-semibold">Rev. Alvin Raj</p>
                   <p className="text-white/70 text-sm">Senior Pastor</p>

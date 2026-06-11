@@ -70,7 +70,8 @@ const Ministry = () => {
           </h2>
 
           <p className="text-[var(--color-secondary-text)] text-base max-w-2xl mx-auto">
-            Find your place to serve and grow in faith with our various ministry teams
+            Find your place to serve and grow in faith with our various ministry
+            teams
           </p>
         </header>
 

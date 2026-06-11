@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { organizations } from "@/lib/data/organizations";
-import OrgHero from "@/app/sections/organizations/OrgHero";
-import OrgAbout from "@/app/sections/organizations/OrgAbout";
-import OrgActivities from "@/app/sections/organizations/OrgActivities";
-import OrgNote from "@/app/sections/organizations/OrgLeaders";
-import OrgActivitiesGrid from "@/app/sections/organizations/OrgActivitiesGrid";
-import OrgGallery from "@/app/sections/organizations/OrgGallery";
+import OrgHero from "@/components/sections/organizations/OrgHero";
+import OrgAbout from "@/components/sections/organizations/OrgAbout";
+import OrgActivities from "@/components/sections/organizations/OrgActivities";
+import OrgNote from "@/components/sections/organizations/OrgLeaders";
+import OrgActivitiesGrid from "@/components/sections/organizations/OrgActivitiesGrid";
+import OrgGallery from "@/components/sections/organizations/OrgGallery";
 import { Contact } from "@/components/layout/index";
 
 interface PageProps {
