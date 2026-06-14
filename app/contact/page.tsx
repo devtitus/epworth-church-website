@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { ContactForm, ContactInfo } from "@/components/sections/contact";
+import { ContactForm, ContactInfo } from "@/components/sections/index";
+import { contactPageSection } from "@/data/contactPageSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Epworth Methodist Tamil Church",
-  description:
-    "Get in touch with Epworth Methodist Tamil Church. We'd love to hear from you.",
+  title: contactPageSection.title,
+  description: contactPageSection.description,
 };
 
 export default function ContactPage() {
@@ -14,10 +14,13 @@ export default function ContactPage() {
         {/* Header */}
         <header className="text-center mb-16 lg:mb-20">
           <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
-            Reach Out
+            {contactPageSection.eyebrow}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] leading-tight">
-            Get in <span className="text-[var(--accent-2)]">Touch</span>
+            {contactPageSection.heading.prefix}{" "}
+            <span className="text-[var(--accent-2)]">
+              {contactPageSection.heading.highlighted}
+            </span>
           </h1>
         </header>
 

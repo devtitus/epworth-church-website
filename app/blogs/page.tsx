@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { sortedBlogs } from "@/lib/data/blogs";
-import { BlogList } from "@/components/sections/blogs";
+import { sortedBlogs } from "@/data/blogs";
+import { BlogList } from "@/components/sections/index";
 
 export const metadata: Metadata = {
   title: "Blogs | Epworth Methodist Tamil Church",
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function BlogsPage() {
   return (
-    <main>
+    <>
       <BlogList blogs={sortedBlogs} />
-    </main>
+    </>
   );
 }

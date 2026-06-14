@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { organizationList } from "@/lib/data/organizations";
-import { organizationHeroSections } from "@/data/heroSection";
+import { organizationList, organizationsPageData } from "@/data/organizations";
 
 export const metadata: Metadata = {
-  title: "Organizations | Epworth Methodist Tamil Church",
-  description: "Discover our church organizations and ministries",
+  title: organizationsPageData.metaTitle,
+  description: organizationsPageData.metaDescription,
 };
 
 export default function OrganizationsPage() {
@@ -13,15 +12,17 @@ export default function OrganizationsPage() {
     <main className="w-full py-20 lg:py-24">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] mb-4">
-          Our <span className="text-[var(--accent-2)]">Organizations</span>
+          {organizationsPageData.titlePrefix}{" "}
+          <span className="text-[var(--accent-2)]">
+            {organizationsPageData.titleHighlighted}
+          </span>
         </h1>
         <p className="text-[var(--color-secondary-text)] text-lg mb-12 max-w-2xl">
-          Explore the various ministries and organizations that make up our church community
+          {organizationsPageData.description}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {organizationList.map((org) => {
-            const hero = organizationHeroSections[org.slug];
             return (
               <Link
                 key={org.slug}
@@ -30,10 +31,10 @@ export default function OrganizationsPage() {
                 style={{ background: "var(--card-shade)" }}
               >
                 <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
-                  {hero?.name}
+                  {org.name}
                 </h2>
                 <p className="text-[var(--color-secondary-text)] text-sm">
-                  {hero?.tagline}
+                  {org.tagline}
                 </p>
               </Link>
             );

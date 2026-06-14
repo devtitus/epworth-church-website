@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { sortedAnnouncements } from "@/lib/data/announcements";
-import AnnList from "@/components/sections/announcements/AnnList";
+import { sortedAnnouncements } from "@/data/announcements";
+import { AnnList } from "@/components/sections/index";
 
 export const metadata: Metadata = {
   title: "Announcements | Epworth Methodist Tamil Church",
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function AnnouncementsPage() {
   return (
-    <main>
+    <>
       <AnnList announcements={sortedAnnouncements} />
-    </main>
+    </>
   );
 }

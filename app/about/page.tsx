@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import {
-  Hero,
+  AboutHero,
   OurHistory,
   AboutGreetings,
   PreachingCenter,
   InCharge,
-} from "@/components/sections/about";
+} from "@/components/sections/index";
+import { aboutGreetingSection } from "@/data/greetingSection";
+import { aboutHistorySection } from "@/data/ourStorySection";
 import { Contact } from "@/components/layout/index";
 
 export const metadata: Metadata = {
@@ -17,9 +19,15 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <Hero />
-      <AboutGreetings />
-      <OurHistory />
+      <AboutHero />
+      <AboutGreetings
+        data={aboutGreetingSection}
+        ariaLabelledby="about-greetings-heading"
+      />
+      <OurHistory
+        data={aboutHistorySection}
+        ariaLabelledby="our-history-heading"
+      />
       <PreachingCenter />
       <InCharge />
       <Contact

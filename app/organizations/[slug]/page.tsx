@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { organizations } from "@/lib/data/organizations";
-import { organizationHeroSections } from "@/data/heroSection";
-import OrgHero from "@/components/sections/organizations/OrgHero";
-import OrgAbout from "@/components/sections/organizations/OrgAbout";
-import OrgActivities from "@/components/sections/organizations/OrgActivities";
-import OrgNote from "@/components/sections/organizations/OrgLeaders";
-import OrgActivitiesGrid from "@/components/sections/organizations/OrgActivitiesGrid";
-import OrgGallery from "@/components/sections/organizations/OrgGallery";
+import { organizations, organizationsContactData } from "@/data/organizations";
+import OrgHero from "@/components/sections/OrgHero";
+import OrgAbout from "@/components/sections/OrgAbout";
+import OrgActivities from "@/components/sections/OrgActivities";
+import OrgNote from "@/components/sections/OrgNote";
+import OrgActivitiesGrid from "@/components/sections/OrgActivitiesGrid";
+import OrgGallery from "@/components/sections/OrgGallery";
 import { Contact } from "@/components/layout/index";
 
 interface PageProps {
@@ -23,15 +22,14 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const org = organizations[slug];
-  const hero = organizationHeroSections[slug];
 
-  if (!org || !hero) {
+  if (!org) {
     return { title: "Not Found" };
   }
 
   return {
-    title: `${hero.name} | Epworth Methodist Tamil Church`,
-    description: hero.description,
+    title: `${org.name} | Epworth Methodist Tamil Church`,
+    description: org.description,
   };
 }
 
@@ -66,11 +64,11 @@ export default async function OrganizationPage({ params }: PageProps) {
       <OrgGallery title={org.galleryTitle} />
 
       <Contact
-        tagline="Stay Connected"
-        title="Join Our Community"
-        description="We'd love to have you be a part of our organization. Reach out to learn more about how you can get involved."
-        buttonText="Get in Touch"
-        buttonHref="/contact"
+        tagline={organizationsContactData.tagline}
+        title={organizationsContactData.title}
+        description={organizationsContactData.description}
+        buttonText={organizationsContactData.buttonText}
+        buttonHref={organizationsContactData.buttonHref}
       />
     </main>
   );

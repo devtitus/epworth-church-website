@@ -4,7 +4,7 @@ import {
   Find,
   About,
   Ministry,
-} from "@/components/sections/home/index";
+} from "@/components/sections/index";
 import { Contact } from "@/components/layout/index";
 
 export default function Home() {
