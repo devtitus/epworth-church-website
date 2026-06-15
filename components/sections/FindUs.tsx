@@ -9,7 +9,7 @@ const FindUs = () => {
 
   return (
     <section
-      className="relative w-full py-16 lg:py-24 bg-[var(--background)]"
+      className="relative w-full py-[clamp(4rem,6vw,6rem)] bg-[var(--background)]"
       aria-labelledby="find-us-heading"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +26,7 @@ const FindUs = () => {
               {/* Title */}
               <h2
                 id="find-us-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-2"
+                className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-2"
               >
                 {title.prefix} <span className="text-[var(--accent-2)]">{title.highlighted}</span>
               </h2>
@@ -148,7 +148,7 @@ const FindUs = () => {
               style={{ background: "var(--card-shade)" }}
             >
               <div className="rounded-2xl border border-[var(--border-highlight)] overflow-hidden">
-                <div className="h-[300px] lg:h-[400px]">
+                <div className="w-full aspect-video">
                   <iframe
                     src={map.iframeSrc}
                     width="100%"

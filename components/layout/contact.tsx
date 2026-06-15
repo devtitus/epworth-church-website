@@ -22,7 +22,7 @@ const ContactSection = ({
 }: ContactSectionProps) => {
   return (
     <section
-      className="relative w-full py-16 lg:py-24 bg-[var(--background-2)]"
+      className="relative w-full py-[clamp(4rem,6vw,6rem)] bg-[var(--background-2)]"
       aria-labelledby="contact-cta-heading"
     >
       {/* Background subtle gradient */}
@@ -40,7 +40,7 @@ const ContactSection = ({
           style={{ background: 'linear-gradient(0deg, var(--gradient-shade-2) 0%, var(--gradient-shade-1) 100%)' }}
         >
           {/* Inner content area */}
-          <div className="px-8 py-8 lg:px-16 lg:py-12">
+          <div className="px-[clamp(2rem,4vw,4rem)] py-[clamp(2rem,4vw,3rem)]">
 
             {/* Tagline - glassmorphism pill */}
             <div className="mb-6">
@@ -56,7 +56,7 @@ const ContactSection = ({
             {/* Title */}
             <h2
               id="contact-cta-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--background)] leading-tight mb-4"
+              className="text-[clamp(1.75rem,3vw+1rem,2.5rem)] font-bold text-[var(--background)] leading-tight mb-4"
             >
               {title.split(' ').map((word, i) => 
                 word.toLowerCase().includes('you') || word.toLowerCase().includes('from') ? (

@@ -45,7 +45,7 @@ const Greetings = ({
 
   return (
     <section
-      className="relative w-full py-20 lg:py-24 bg-[var(--background)]"
+      className="relative w-full py-[clamp(4rem,8vw,6rem)] bg-[var(--background)]"
       aria-labelledby={ariaLabelledby}
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +61,7 @@ const Greetings = ({
               {/* Title */}
               <h2
                 id={ariaLabelledby}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
+                className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-6"
               >
                 {prefix}{" "}
                 <span className="text-[var(--accent-2)]">{highlighted}</span>

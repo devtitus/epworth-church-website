@@ -26,7 +26,7 @@ const Hero = () => {
       {/* Main Content */}
       <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left Column - Main Content */}
             <header className="text-center lg:text-left">
               {/* Badge */}
@@ -48,7 +48,7 @@ const Hero = () => {
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold text-white leading-[1.15] mb-5">
+              <h1 className="text-[clamp(2.5rem,5vw+1rem,4rem)] font-bold text-white leading-[1.15] mb-5">
                 {heroSection.title.prefix}{" "}
                 <span className="block mt-2">
                   <span className="inline-block">
@@ -68,16 +68,11 @@ const Hero = () => {
 
             {/* Right Column - Updates Marquee */}
             <aside
-              className="hidden lg:block w-full max-w-md ml-auto"
+              className="w-full max-w-md mx-auto lg:ml-auto lg:mr-0 mt-8 lg:mt-0"
               aria-label="Latest Church Updates"
             >
               <NewsMarquee />
             </aside>
-          </div>
-
-          {/* Mobile Latest Updates */}
-          <div className="lg:hidden mt-10" aria-label="Latest Church Updates">
-            <NewsMarquee />
           </div>
         </div>
       </div>

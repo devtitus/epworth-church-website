@@ -6,7 +6,7 @@ const Ministry = () => {
 
   return (
     <section
-      className="relative w-full py-16 lg:py-24 bg-[var(--background)]"
+      className="relative w-full py-[clamp(4rem,6vw,6rem)] bg-[var(--background)]"
       aria-labelledby="ministry-heading"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ const Ministry = () => {
           {/* Title */}
           <h2
             id="ministry-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-2"
+            className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-2"
           >
             {title.prefix}{" "}
             <span className="text-[var(--accent-2)]">{title.highlighted}</span>
