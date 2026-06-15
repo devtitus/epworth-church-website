@@ -26,10 +26,10 @@ const ContactForm = () => {
 
   return (
     <div
-      className="p-8 md:p-12 rounded-3xl border border-[var(--border-highlight)] shadow-lg backdrop-blur-md relative overflow-hidden"
+      className="p-5 sm:p-8 md:p-12 rounded-3xl border border-[var(--border-highlight)] shadow-lg backdrop-blur-md relative overflow-hidden"
       style={{ background: "var(--surface-paper)" }}
     >
-      <h3 className="text-2xl lg:text-3xl font-bold text-[var(--foreground)] mb-2">
+      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[var(--foreground)] mb-2">
         Send us a Message
       </h3>
       <p className="text-[var(--color-secondary-text)] mb-8">

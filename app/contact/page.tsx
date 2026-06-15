@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] py-20 lg:py-24">
+    <main className="min-h-screen bg-[var(--background)] py-12 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="text-center mb-16 lg:mb-20">
+        <header className="text-center mb-10 md:mb-16 lg:mb-20">
           <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
             {contactPageSection.eyebrow}
           </span>
@@ -25,14 +25,14 @@ export default function ContactPage() {
         </header>
 
         {/* 2-Column Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
           {/* Left Column: Form */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 md:order-1">
             <ContactForm />
           </div>
 
           {/* Right Column: Info & Map */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 md:order-2">
             <ContactInfo />
           </div>
         </div>
