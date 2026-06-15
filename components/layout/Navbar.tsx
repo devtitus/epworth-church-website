@@ -38,7 +38,7 @@ const Navbar = () => {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`px-4 py-2 rounded-full text-sm font-normal transition-colors ${
+                    className={`px-4 py-2 rounded-full text-base font-normal transition-colors ${
                       isActive(link.href)
                         ? "text-[var(--accent-1)] bg-[var(--accent-5)]/70"
                         : "text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]"
@@ -70,7 +70,7 @@ const Navbar = () => {
               link.type === "dropdown" ? (
                 <div key={link.label}>
                   <div className="pt-2 pb-1">
-                    <span className="block px-3 py-2 text-sm font-semibold text-[var(--foreground)]">
+                    <span className="block px-3 py-2 text-base font-semibold text-[var(--foreground)]">
                       {link.label}
                     </span>
                   </div>

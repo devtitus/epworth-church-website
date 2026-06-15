@@ -37,7 +37,7 @@ export function Dropdown({ trigger, items }: DropdownProps) {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center px-4 py-2 rounded-full text-sm font-normal transition-colors focus:outline-none cursor-pointer ${
+        className={`flex items-center px-4 py-2 rounded-full text-base font-normal transition-colors focus:outline-none cursor-pointer ${
           isAnyItemActive
             ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
             : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'
@@ -59,7 +59,7 @@ export function Dropdown({ trigger, items }: DropdownProps) {
               <a
                 key={item.name}
                 href={item.href}
-                className={`block px-4 py-2 text-sm transition-colors ${
+                className={`block px-4 py-2 text-base transition-colors ${
                   pathname === item.href
                     ? 'text-[var(--color-highlight)] bg-[var(--accent-5)]'
                     : 'text-[var(--foreground)] hover:bg-[var(--accent-5)]/70 hover:text-[var(--accent-1)]'

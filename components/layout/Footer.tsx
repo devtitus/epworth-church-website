@@ -26,7 +26,7 @@ const Footer = () => {
               <h3 className="text-xl text-[var(--accent-4)] font-bold">
                 {footerData.churchName}
               </h3>
-              <p className="text-[var(--color-secondary-text)] text-sm">
+              <p className="text-[var(--color-secondary-text)] text-[15px]">
                 {footerData.tagline}
               </p>
             </div>
@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8">
             {footerData.sections.map((section) => (
               <div key={section.title}>
-                <h4 className="font-semibold text-[var(--accent-2)] text-sm mb-2">
+                <h4 className="font-semibold text-[var(--accent-2)] text-[15px] mb-2">
                   {section.title}
                 </h4>
                 <ul className="space-y-1">
@@ -43,7 +43,7 @@ const Footer = () => {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-[var(--color-secondary-text)] text-sm hover:text-[var(--color-highlight)]"
+                        className="text-[var(--color-secondary-text)] text-[15px] hover:text-[var(--color-highlight)]"
                       >
                         {link.label}
                       </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center">
-          <div className="text-start text-sm text-[var(--accent-2)]">
+          <div className="text-start text-[15px] text-[var(--accent-2)]">
             <p>
               &copy; {new Date().getFullYear()} {footerData.copyright.text}
             </p>
