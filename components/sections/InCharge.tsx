@@ -32,7 +32,7 @@ const InCharge = () => {
                   aria-hidden
                 />
                 <div className="flex-1 flex flex-col justify-center px-5 py-6 bg-[var(--card-shade)] border-t border-[var(--border-highlight)] text-center">
-                  <h3 className="font-bold text-[var(--foreground)] mb-1">
+                  <h3 className="text-lg md:text-xl font-bold text-[var(--foreground)] mb-1">
                     {person.name}
                   </h3>
                   <p className="text-sm text-[var(--color-secondary-text)]">
