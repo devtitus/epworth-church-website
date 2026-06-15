@@ -33,7 +33,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
           <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
         </div>
 
-        <div className="flex flex-col flex-grow p-6 lg:p-8 backdrop-blur-sm">
+        <div className="flex flex-col flex-grow p-5 sm:p-6 lg:p-8 backdrop-blur-sm">
           {/* Meta (Date + Primary Tag) */}
           <div className="flex flex-wrap items-start justify-between gap-2 mb-4 text-sm text-[var(--color-secondary-text)]">
             <div className="flex items-center gap-2">
@@ -51,7 +51,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
           </div>
 
           {/* Title */}
-          <h3 className="text-xl md:text-2xl font-bold text-[var(--foreground)] leading-tight mb-3 group-hover:text-[var(--color-highlight)] transition-colors">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[var(--foreground)] leading-tight mb-3 group-hover:text-[var(--color-highlight)] transition-colors">
             {blog.title}
           </h3>
 

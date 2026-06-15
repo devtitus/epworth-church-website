@@ -45,12 +45,12 @@ const AnnList = ({ announcements }: AnnListProps) => {
 
   return (
     <section
-      className="relative w-full bg-[var(--background)] py-20 lg:py-24"
+      className="relative w-full bg-[var(--background)] py-12 md:py-20 lg:py-24"
       aria-labelledby="ann-list-heading"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="text-center mb-10 lg:mb-12">
+        <header className="text-center mb-8 md:mb-12">
           <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
             {announcementsListSection.eyebrow}
           </span>
@@ -67,14 +67,14 @@ const AnnList = ({ announcements }: AnnListProps) => {
 
         {/* Category Filters */}
         {categories.length > 1 && (
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 md:mb-10">
             {categories.map((category) => {
               const isActive = selectedCategory === category;
               return (
                 <button
                   key={category}
                   onClick={() => handleCategoryChange(category)}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+                  className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                     isActive
                       ? "bg-[var(--accent-5)] text-[var(--accent-1)] border-[var(--accent-5)] shadow-md"
                       : "bg-[var(--card-shade)] text-[var(--color-secondary-text)] border-[var(--border-highlight)] hover:bg-[var(--accent-3)]/50 hover:text-[var(--foreground)]"

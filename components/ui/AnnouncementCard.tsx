@@ -45,24 +45,20 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
       className={`relative rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs overflow-hidden transition-all duration-300 hover:shadow-lg ${priorityStyles.border} border-l-4`}
       style={{ background: "var(--card-shade)" }}
     >
-      {/* Priority Badge */}
-      {isNew && (
-        <div className="absolute top-4 right-4 z-10">
-          <span
-            className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold ${priorityStyles.badge}`}
-          >
-            NEW
-          </span>
-        </div>
-      )}
-
-      <div className="p-6 lg:p-8">
+      <div className="p-5 sm:p-6 lg:p-8">
         {/* Header Row */}
-        <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-          <h3 className="text-xl md:text-2xl font-bold text-[var(--foreground)] leading-tight flex-1">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 mb-4">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[var(--foreground)] leading-tight">
             {announcement.title}
+            {isNew && (
+              <span
+                className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider ml-2.5 align-middle ${priorityStyles.badge}`}
+              >
+                NEW
+              </span>
+            )}
           </h3>
-          <div className="flex flex-col items-start md:items-end gap-2 text-sm text-[var(--color-secondary-text)] mt-2 md:mt-0">
+          <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-[var(--color-secondary-text)] md:flex-col md:items-end mt-1 md:mt-0">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               <time dateTime={announcement.date}>

@@ -33,7 +33,7 @@ export default async function BlogPage({ params }: Props) {
   };
 
   return (
-    <main className="min-h-screen bg-[var(--background)] py-12 lg:py-20">
+    <main className="min-h-screen bg-[var(--background)] py-8 md:py-12 lg:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <Link
@@ -50,7 +50,7 @@ export default async function BlogPage({ params }: Props) {
           style={{ background: "var(--card-shade)" }}
         >
           {/* Hero Image & Headline */}
-          <div className="relative w-full h-[300px] md:h-[450px]">
+          <div className="relative w-full h-[250px] sm:h-[320px] md:h-[450px]">
             <Image
               src={blog.imageUrl || "/home/1.jpg"}
               alt={blog.title}
@@ -60,7 +60,7 @@ export default async function BlogPage({ params }: Props) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/90 via-[#141414]/40 to-transparent" />
 
-            <div className="absolute bottom-0 left-0 w-full p-6 md:p-12">
+            <div className="absolute bottom-0 left-0 w-full p-5 sm:p-6 md:p-12">
               <div className="flex flex-wrap gap-2 mb-4">
                 {blog.tags.map((tag) => (
                   <span
@@ -71,7 +71,7 @@ export default async function BlogPage({ params }: Props) {
                   </span>
                 ))}
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-4">
                 {blog.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4 md:gap-6 text-white/80 text-sm font-medium">
@@ -88,7 +88,7 @@ export default async function BlogPage({ params }: Props) {
           </div>
 
           {/* Content Box */}
-          <div className="bg-[var(--surface-paper)] p-6 md:p-12 border-t border-[var(--border-highlight)]">
+          <div className="bg-[var(--surface-paper)] p-5 sm:p-6 md:p-12 border-t border-[var(--border-highlight)]">
             <div
               className="text-base md:text-lg text-[var(--color-secondary-text)] leading-relaxed
                            [&>h1]:text-2xl [&>h1]:md:text-3xl [&>h1]:font-bold [&>h1]:text-[var(--foreground)] [&>h1]:mb-6 [&>h1]:mt-8 [&>h1:first-child]:mt-0
