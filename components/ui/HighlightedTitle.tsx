@@ -12,7 +12,7 @@ const HighlightedTitle = ({ id, title, className = "" }: HighlightedTitleProps) 
   return (
     <h2
       id={id}
-      className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight ${className}`}
+      className={`font-bold text-[var(--foreground)] leading-tight ${className}`}
     >
       {firstWords && (
         <>

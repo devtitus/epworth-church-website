@@ -109,7 +109,7 @@ const OurStory = ({
                       {statsData.map((stat, index) => (
                         <div key={index} className="flex items-center gap-6">
                           <div className="text-center">
-                            <p className="text-xl font-bold text-white">
+                            <p className="text-base md:text-xl font-bold text-white">
                               {stat.value}
                             </p>
                             <p className="text-xs text-white/70">
@@ -141,7 +141,7 @@ const OurStory = ({
               {/* Title */}
               <h2
                 id={ariaLabelledby}
-                className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-6"
+                className="font-bold text-[var(--foreground)] leading-tight mb-6"
               >
                 {prefix}{" "}
                 <span className="text-[var(--accent-2)]">{highlighted}</span>

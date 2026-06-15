@@ -55,7 +55,7 @@ const BlogList = ({ blogs }: BlogListProps) => {
           </span>
           <h2
             id="blog-list-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight"
+            className="font-bold text-[var(--foreground)] leading-tight"
           >
             {blogListSection.heading.prefix}{" "}
             <span className="text-[var(--accent-2)]">
@@ -96,7 +96,7 @@ const BlogList = ({ blogs }: BlogListProps) => {
         {/* Empty State */}
         {filteredBlogs.length === 0 && (
           <div className="text-center py-16 rounded-2xl border border-[var(--border-highlight)] bg-[var(--card-shade)] backdrop-blur-sm mt-6">
-            <p className="text-[var(--color-secondary-text)] text-lg">
+            <p className="text-[var(--color-secondary-text)] text-base md:text-lg">
               {blogListSection.emptyState.message}
             </p>
             <button

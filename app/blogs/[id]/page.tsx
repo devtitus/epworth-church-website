@@ -71,7 +71,7 @@ export default async function BlogPage({ params }: Props) {
                   </span>
                 ))}
               </div>
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
                 {blog.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4 md:gap-6 text-white/80 text-sm font-medium">

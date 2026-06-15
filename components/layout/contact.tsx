@@ -90,7 +90,7 @@ const ContactSection = ({
 
               {/* CTA Button - on the right */}
               <Link href={buttonHref}>
-                <Button variant="primary" className="text-lg px-10">
+                <Button variant="primary" className="px-10">
                   {buttonText}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

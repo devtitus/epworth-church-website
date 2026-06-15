@@ -35,7 +35,7 @@ const OrgHero = ({ slug }: OrgHeroProps) => {
 
             <h1
               id="org-hero-heading"
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
+              className="text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-tight mb-6"
             >
               {firstName}{" "}
               <span className="text-[var(--accent-2)]">{lastName}</span>

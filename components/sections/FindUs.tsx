@@ -26,7 +26,7 @@ const FindUs = () => {
               {/* Title */}
               <h2
                 id="find-us-heading"
-                className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-2"
+                className="font-bold text-[var(--foreground)] leading-tight mb-2"
               >
                 {title.prefix} <span className="text-[var(--accent-2)]">{title.highlighted}</span>
               </h2>
@@ -50,7 +50,7 @@ const FindUs = () => {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[var(--foreground)] font-bold text-lg mb-1">
+                    <h3 className="text-[var(--foreground)] font-bold mb-1">
                       {address.name}
                     </h3>
                     <p className="text-[var(--color-secondary-text)] text-sm">

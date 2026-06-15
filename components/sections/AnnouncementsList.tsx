@@ -56,7 +56,7 @@ const AnnList = ({ announcements }: AnnListProps) => {
           </span>
           <h2
             id="ann-list-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight"
+            className="font-bold text-[var(--foreground)] leading-tight"
           >
             {announcementsListSection.heading.prefix}{" "}
             <span className="text-[var(--accent-2)]">
@@ -100,7 +100,7 @@ const AnnList = ({ announcements }: AnnListProps) => {
         {/* Empty State */}
         {filteredAnnouncements.length === 0 && (
           <div className="text-center py-16 rounded-2xl border border-[var(--border-highlight)] bg-[var(--card-shade)] backdrop-blur-sm mt-6">
-            <p className="text-[var(--color-secondary-text)] text-lg">
+            <p className="text-[var(--color-secondary-text)] text-base md:text-lg">
               {announcementsListSection.emptyState.message}
             </p>
             <button

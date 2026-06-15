@@ -18,7 +18,7 @@ const PreachingCenter = () => {
 
             <h2
               id="preaching-center-heading"
-              className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-6"
+              className="font-bold text-[var(--foreground)] leading-tight mb-6"
             >
               {title.prefix}{" "}
               <span className="text-[var(--accent-2)]">
@@ -31,7 +31,7 @@ const PreachingCenter = () => {
             </p>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-[var(--foreground)] mb-4">
+              <h3 className="font-semibold text-[var(--foreground)] mb-4">
                 {service.label}
               </h3>
               <ul className="space-y-3 text-base text-[var(--color-secondary-text)] leading-relaxed list-none">

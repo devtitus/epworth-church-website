@@ -20,7 +20,7 @@ const Ministry = () => {
           {/* Title */}
           <h2
             id="ministry-heading"
-            className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-2"
+            className="font-bold text-[var(--foreground)] leading-tight mb-2"
           >
             {title.prefix}{" "}
             <span className="text-[var(--accent-2)]">{title.highlighted}</span>

@@ -29,7 +29,7 @@ const ContactForm = () => {
       className="p-5 sm:p-8 md:p-12 rounded-3xl border border-[var(--border-highlight)] shadow-lg backdrop-blur-md relative overflow-hidden"
       style={{ background: "var(--surface-paper)" }}
     >
-      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[var(--foreground)] mb-2">
+      <h3 className="font-bold text-[var(--foreground)] mb-2">
         Send us a Message
       </h3>
       <p className="text-[var(--color-secondary-text)] mb-8">
@@ -40,7 +40,7 @@ const ContactForm = () => {
       {isSuccess ? (
         <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
           <CheckCircle2 className="w-16 h-16 text-green-500 mb-4" />
-          <h4 className="text-xl font-bold text-[var(--foreground)] mb-2">
+          <h4 className="font-bold text-[var(--foreground)] mb-2">
             Message Sent Successfully!
           </h4>
           <p className="text-[var(--color-secondary-text)]">

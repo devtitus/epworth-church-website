@@ -15,7 +15,7 @@ const InCharge = () => {
           </span>
           <h2
             id="in-charge-heading"
-            className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight"
+            className="font-bold text-[var(--foreground)] leading-tight"
           >
             {title.prefix}
             <span className="text-[var(--accent-2)]">{title.highlighted}</span>
@@ -32,7 +32,7 @@ const InCharge = () => {
                   aria-hidden
                 />
                 <div className="flex-1 flex flex-col justify-center px-5 py-6 bg-[var(--card-shade)] border-t border-[var(--border-highlight)] text-center">
-                  <h3 className="text-[clamp(1.125rem,2vw+0.5rem,1.25rem)] font-bold text-[var(--foreground)] mb-1">
+                  <h3 className="font-bold text-[var(--foreground)] mb-1">
                     {person.name}
                   </h3>
                   <p className="text-sm text-[var(--color-secondary-text)]">

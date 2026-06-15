@@ -23,7 +23,7 @@ const Footer = () => {
               height={footerData.logo.height}
             />
             <div className="mt-4">
-              <h3 className="text-xl text-[var(--accent-4)] font-bold">
+              <h3 className="text-[var(--accent-4)] font-bold">
                 {footerData.churchName}
               </h3>
               <p className="text-[var(--color-secondary-text)] text-[15px]">

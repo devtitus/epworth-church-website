@@ -16,7 +16,7 @@ export default function ContactPage() {
           <span className="inline-block text-[var(--color-highlight)] text-sm font-semibold uppercase tracking-widest mb-3">
             {contactPageSection.eyebrow}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] leading-tight">
+          <h1 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-tight mb-4">
             {contactPageSection.heading.prefix}{" "}
             <span className="text-[var(--accent-2)]">
               {contactPageSection.heading.highlighted}

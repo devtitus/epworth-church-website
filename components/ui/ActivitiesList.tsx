@@ -14,7 +14,7 @@ const ActivitiesList = ({
 }: ActivitiesListProps) => {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-[var(--foreground)] mb-4">
+      <h3 className="font-semibold text-[var(--foreground)] mb-4">
         {heading}
       </h3>
       <ul className="space-y-3 text-base text-[var(--color-secondary-text)] leading-relaxed list-none">

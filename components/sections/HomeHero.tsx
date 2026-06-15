@@ -48,7 +48,7 @@ const Hero = () => {
               </div>
 
               {/* Title */}
-              <h1 className="text-[clamp(2.5rem,5vw+1rem,4rem)] font-bold text-white leading-[1.15] mb-5">
+              <h1 className="font-bold text-white leading-[1.15] mb-5">
                 {heroSection.title.prefix}{" "}
                 <span className="block mt-2">
                   <span className="inline-block">

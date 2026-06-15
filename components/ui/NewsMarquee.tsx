@@ -22,17 +22,17 @@ export const NewsMarquee = () => {
           backdropFilter: "blur(10px)",
         }}
       >
-        <h2 className="text-white text-xl font-bold flex items-center gap-2">
+        <h2 className="text-lg md:text-xl text-white font-medium flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[var(--color-highlight)] animate-pulse" />
           {newsMarqueeConfig.headerTitle}
         </h2>
       </div>
 
       {/* Marquee Wrapper */}
-      <div className="relative flex-1 overflow-hidden mt-20 group">
+      <div className="relative flex-1 overflow-hidden mt-17 group">
         {/* Fading Edges */}
-        <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[rgba(20,20,20,0.6)] to-transparent z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[rgba(20,20,20,0.6)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-5 bg-gradient-to-b from-[rgba(20,20,20,0.4)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-5 bg-gradient-to-t from-[rgba(20,20,20,0.4)] to-transparent z-10 pointer-events-none" />
 
         <div
           className="flex flex-col gap-4 px-6 pt-4 pb-0 h-max group-hover:[animation-play-state:paused]"

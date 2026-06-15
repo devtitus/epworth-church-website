@@ -61,7 +61,7 @@ const Greetings = ({
               {/* Title */}
               <h2
                 id={ariaLabelledby}
-                className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-6"
+                className="font-bold text-[var(--foreground)] leading-tight mb-6"
               >
                 {prefix}{" "}
                 <span className="text-[var(--accent-2)]">{highlighted}</span>

@@ -51,7 +51,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
           </div>
 
           {/* Title */}
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[var(--foreground)] leading-tight mb-3 group-hover:text-[var(--color-highlight)] transition-colors">
+          <h3 className="text-lg md:text-xl font-bold text-[var(--foreground)] leading-tight mb-3 group-hover:text-[var(--color-highlight)] transition-colors">
             {blog.title}
           </h3>
 

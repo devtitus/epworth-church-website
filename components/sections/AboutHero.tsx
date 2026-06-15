@@ -12,7 +12,7 @@ const AboutHero = () => {
           <div className="lg:col-span-5">
             <h1
               id="about-hero-heading"
-              className="text-[clamp(2.5rem,6vw+1rem,4.5rem)] font-bold text-[var(--foreground)] uppercase tracking-[0.02em] leading-[1.05]"
+              className="font-bold text-[var(--foreground)] uppercase tracking-[0.02em] leading-[1.05]"
             >
               {aboutHeroSection.title.prefix}{" "}
               <span className="text-[var(--accent-5)]">
@@ -36,7 +36,7 @@ const AboutHero = () => {
             <div>
               <h2
                 id="about-our-beginning-heading"
-                className="text-[clamp(1.5rem,3vw+1rem,2.5rem)] font-bold text-[var(--foreground)] leading-tight mb-4"
+                className="font-bold text-[var(--foreground)] leading-tight mb-4"
               >
                 {aboutHeroSection.subtitle.prefix}{" "}
                 <span className="text-[var(--accent-2)]">

@@ -41,7 +41,7 @@ const MinistryCard = ({
 
         {/* Card Content - positioned absolutely over the image */}
         <div className="absolute bottom-0 left-0 right-0 z-20 p-6">
-          <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[var(--accent-5)] transition-colors duration-300">
+          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[var(--accent-5)] transition-colors duration-300">
             {title}
           </h3>
           <p className="text-white/80 text-sm">{description}</p>

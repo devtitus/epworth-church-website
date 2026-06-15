@@ -48,7 +48,7 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
       <div className="p-5 sm:p-6 lg:p-8">
         {/* Header Row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 mb-4">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[var(--foreground)] leading-tight">
+          <h3 className="text-lg md:text-xl font-bold text-[var(--foreground)] leading-tight">
             {announcement.title}
             {isNew && (
               <span
