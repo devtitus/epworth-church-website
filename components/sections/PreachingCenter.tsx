@@ -6,7 +6,7 @@ const PreachingCenter = () => {
 
   return (
     <section
-      className="relative w-full bg-[var(--background)] py-20 lg:py-24"
+      className="relative w-full bg-[var(--background)] py-[clamp(4rem,8vw,6rem)]"
       aria-labelledby="preaching-center-heading"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ const PreachingCenter = () => {
 
             <h2
               id="preaching-center-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight mb-6"
+              className="text-[clamp(2rem,4vw+1rem,3rem)] font-bold text-[var(--foreground)] leading-tight mb-6"
             >
               {title.prefix}{" "}
               <span className="text-[var(--accent-2)]">
@@ -54,9 +54,9 @@ const PreachingCenter = () => {
             </p>
           </div>
 
-          <div className="flex items-stretch lg:items-center order-1 lg:order-2">
+          <div className="flex items-center justify-center order-1 lg:order-2">
             <div
-              className="relative w-full min-h-[280px] sm:min-h-[320px] lg:min-h-[420px] lg:max-h-[min(52vh,520px)] rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs flex items-center justify-center"
+              className="relative w-full aspect-square lg:aspect-[4/3] rounded-2xl border border-[var(--border-highlight)] backdrop-blur-lg shadow-xs flex items-center justify-center"
               style={{
                 background:
                   "linear-gradient(0deg, rgba(126, 106, 82, 0.3) 0%, rgba(218, 206, 182, 0.1) 60%)",

@@ -4,7 +4,7 @@ import { aboutHeroSection } from "@/data/heroSection";
 const AboutHero = () => {
   return (
     <section
-      className="relative w-full bg-[var(--background)] py-16 sm:py-20 lg:py-24"
+      className="relative w-full bg-[var(--background)] py-[clamp(4rem,8vw,6rem)]"
       aria-label={aboutHeroSection.ariaLabel}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +12,7 @@ const AboutHero = () => {
           <div className="lg:col-span-5">
             <h1
               id="about-hero-heading"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--foreground)] uppercase tracking-[0.02em] leading-[1.05]"
+              className="text-[clamp(2.5rem,6vw+1rem,4.5rem)] font-bold text-[var(--foreground)] uppercase tracking-[0.02em] leading-[1.05]"
             >
               {aboutHeroSection.title.prefix}{" "}
               <span className="text-[var(--accent-5)]">
@@ -36,7 +36,7 @@ const AboutHero = () => {
             <div>
               <h2
                 id="about-our-beginning-heading"
-                className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--foreground)] leading-tight mb-4"
+                className="text-[clamp(1.5rem,3vw+1rem,2.5rem)] font-bold text-[var(--foreground)] leading-tight mb-4"
               >
                 {aboutHeroSection.subtitle.prefix}{" "}
                 <span className="text-[var(--accent-2)]">

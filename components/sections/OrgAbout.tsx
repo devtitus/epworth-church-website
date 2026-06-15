@@ -11,8 +11,8 @@ interface OrgAboutProps {
 const OrgAbout = ({ title, content }: OrgAboutProps) => {
   return (
     <SectionShell id="org-about-section" labelledBy="org-about-heading">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div className="order-2 lg:order-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
+        <div className="order-1 md:order-1">
           <SectionHeader
             label="About Us"
             title={title}
@@ -23,7 +23,7 @@ const OrgAbout = ({ title, content }: OrgAboutProps) => {
           <ParagraphList paragraphs={content} className="mb-8" />
         </div>
 
-        <div className="order-1 lg:order-2">
+        <div className="order-2 md:order-2">
           <GlassMediaFrame alt="About organization illustration" />
         </div>
       </div>

@@ -11,7 +11,7 @@ const SectionShell = ({ id, labelledBy, children, className = "" }: SectionShell
   return (
     <section
       id={id}
-      className={`relative w-full bg-[var(--background)] py-20 lg:py-24 ${className}`}
+      className={`relative w-full bg-[var(--background)] py-12 md:py-20 lg:py-24 ${className}`}
       aria-labelledby={labelledBy}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

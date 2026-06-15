@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function OrganizationsPage() {
   return (
-    <main className="w-full py-20 lg:py-24">
+    <main className="w-full py-12 md:py-20 lg:py-24">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] leading-tight mb-4">
           {organizationsPageData.titlePrefix}{" "}
           <span className="text-[var(--accent-2)]">
             {organizationsPageData.titleHighlighted}
           </span>
         </h1>
-        <p className="text-[var(--color-secondary-text)] text-lg mb-12 max-w-2xl">
+        <p className="text-[var(--color-secondary-text)] text-lg mb-8 md:mb-12 max-w-2xl">
           {organizationsPageData.description}
         </p>
 

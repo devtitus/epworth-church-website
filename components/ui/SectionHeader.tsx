@@ -16,7 +16,7 @@ const SectionHeader = ({
   id,
   align = "left",
   description,
-  className = "mb-12 lg:mb-16",
+  className = "mb-8 md:mb-12 lg:mb-16",
   labelSpacing = "sm",
 }: SectionHeaderProps) => {
   const isCentered = align === "center";

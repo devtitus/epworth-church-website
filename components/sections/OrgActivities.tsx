@@ -20,12 +20,12 @@ const OrgActivities = ({
 }: OrgActivitiesProps) => {
   return (
     <SectionShell id="org-activities-section" labelledBy="org-activities-heading">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div className="order-2 lg:order-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
+        <div className="order-2 md:order-1">
           <GlassMediaFrame alt="Activities illustration" />
         </div>
 
-        <div className="order-1 lg:order-2">
+        <div className="order-1 md:order-2">
           <SectionHeader
             label={label}
             title={title}
