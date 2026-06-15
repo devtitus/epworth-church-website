@@ -5,7 +5,7 @@ import { heroSection } from "@/data/heroSection";
 const Hero = () => {
   return (
     <section
-      className="relative w-full h-screen min-h-[700px] overflow-hidden"
+      className="relative w-full min-h-[100dvh] lg:h-screen lg:min-h-[700px] overflow-hidden"
       aria-label={heroSection.ariaLabel}
     >
       {/* Background Image */}
@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center">
+      <div className="relative z-10 w-full h-full min-h-full flex items-center justify-center pt-32 pb-24 lg:py-0">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left Column - Main Content */}
